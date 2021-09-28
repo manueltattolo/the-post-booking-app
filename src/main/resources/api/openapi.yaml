@@ -1,0 +1,1012 @@
+openapi: 3.0.3
+info:
+  title: The post-booking app
+  description: >-
+    This is a booking system app for restaurants that allow users to modify and customize their reservation.
+  termsOfService: https://github.com/manueltattolo/
+  contact: 
+    email: manuel.tattolo@gmail.com
+  license:
+    name: Apache 2.0
+    url: https://github.com/manueltattolo/
+  version: 1.0.0
+externalDocs:
+  description: Find out more about this app
+  url: http://thepostbookingapp.co.uk
+servers:
+  - url: https://postbooking.swagger.io/v2
+tags:
+  - name: booking
+    description: Everything about your booking
+    externalDocs:
+      description: Find out more
+      url: http://swagger.io
+  - name: restaurant
+    description: Operation about restaurant
+  - name: customer
+    description: Operations about customer
+  - name: table
+    description: Operations about table
+  - name: upgrades
+    description: Operations about upgrades
+  - name: service
+    description: Operations about table service
+  - name: waiter
+    description: Operations about waiters
+    
+paths:
+  /api/v1/{customerId}/booking:
+    get:
+      tags:
+        - booking
+      summary: Returns the booking
+      description: Returns the booking of given customer
+      operationId: getBookingsByCustomerId
+      parameters:
+        - name: customerId
+          in: path
+          description: Customer Identifier
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Booking'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Booking'
+        404:
+          description: Given customer ID doesn't exist
+          content: {}
+    delete:
+      tags:
+        - booking
+      summary: Delete the booking
+      description: Deletes the booking of given customer
+      operationId: deleteBooking
+      parameters:
+        - name: customerId
+          in: path
+          description: Customer Identifier
+          required: true
+          schema:
+            type: string
+      responses:
+        204:
+          description: successful operation
+        404:
+          description: Given customer ID doesn't exist
+          content: {}
+    put:
+      tags:
+        - booking
+      summary: Modify the booking
+      description: Modify the booking of given customer
+      operationId: modifyBooking
+      parameters:
+        - name: customerId
+          in: path
+          description: Customer Identifier
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: Booking object
+        content:
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/Booking'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Booking'          
+      responses:
+        204:
+          description: successful operation
+        404:
+          description: Given customer ID doesn't exist
+          content: {} 
+  /api/v1/customer/{bookingId}/services:
+    get:
+      tags:
+        - service
+      summary: Returns the list of booked services
+      description: Returns the table and service booked by the given customer
+      operationId: getBookedTablesByCustomerId
+      parameters:
+        - name: bookingId
+          in: path
+          description: Booking Identifier
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Service'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Service'
+        404:
+          description: Given customer ID doesn't exist
+          content: {}
+    post:
+      tags:
+        - service
+      summary: Adds a service/table to the booking
+      description: Adds a service/table to the booking if it doesn't already exist, or add one more.
+      operationId: addServicesByBookingId
+      parameters:
+        - name: bookingId
+          in: path
+          description: Customer Identifier
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: Service object
+        content:
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/Service'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Service'
+      responses:
+        201:
+          description: Service/Table added successfully
+          content:
+            application/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Service'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Service'
+        404:
+          description: Given customer ID doesn't exist
+          content: {} 
+    put:
+      tags:
+        - service
+      summary: Replace/add a service/table in the booking
+      description: Adds a service/table to the booking if it doesn't already exist, or replace with given service/table if it does
+      operationId: addOrReplaceServicesByBookingId
+      parameters:
+        - name: bookingId
+          in: path
+          description: Customer Identifier
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: Item object
+        content:
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/Service'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Service'
+      responses:
+        201:
+          description: Service/Table added successfully
+          content:
+            application/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Service'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Service'
+        404:
+          description: Given customer ID doesn't exist
+          content: {}
+    delete:
+      tags:
+        - service
+      summary: Delete all services for the given customer
+      description: Delete all services for the given customer
+      operationId: deleteServicesByCustomerId
+      parameters:
+        - name: bookingId
+          in: path
+          description: Customer Identifier
+          required: true
+          schema:
+            type: string
+      responses:
+        202:
+          description: Request accepted, returns this status even if user does not exist
+          content: {}
+  /api/v1/{customerId}/booking/services/tables:
+    get:
+      tags:
+        - table
+      summary: Returns given tables from customer's booking
+      description: Returns given table from booking of given customer
+      operationId: getTableByCustomerId
+      parameters:
+        - name: customerId
+          in: path
+          description: Customer Identifier
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: If table exists in service
+          content:
+            application/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/RestTable'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/RestTable'
+        404:
+          description: Given customer ID doesn't exist
+          content: {}
+  /api/v1/customerId/booking/services/{tableId}:        
+    delete:
+      tags:
+        - table
+      summary: Delete the table from service and booking
+      description: Deletes the table from the booking'service of given customer
+      operationId: deleteTableFromBooking
+      parameters:
+        - name: tableId
+          in: path
+          description: Table Identifier
+          required: true
+          schema:
+            type: string
+      responses:
+        202:
+          description: Accepts the request, regardless of whether the specified table exists in the service or not.
+  /api/v1/{restaurantId}/table:
+    post:
+      tags:
+        - table
+      summary: Adds table to given restaurant
+      description: Adds table to given restaurant
+      parameters:
+        - name: restaurantId
+          in: path
+          description: Restaurant Identifier
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: Table object
+        content:
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/RestTable'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RestTable'
+      responses:
+        201:
+          description: Upgrades added successfully
+          content:
+            application/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Upgrades'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Upgrades'
+        404:
+          description: Given table ID doesn't exist
+          content: {} 
+  /api/v1/booking:
+    post:
+      tags:
+        - booking
+      summary:  Creates a new booking for the given booking request
+      description: Creates a new booking for the given booking request.
+      operationId: addBooking
+      requestBody:
+        description: Booking object
+        content:
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/Booking'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Booking'
+      responses:
+        201:
+          description: Booking added successfully
+          content:
+            application/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Booking'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Booking'
+        406:
+          description: If payment is not authorized.
+          content: {}
+  /api/v1/bookings/{id}:
+    get:
+      tags:
+        - booking
+      summary: Returns the booking of given booking id
+      description: Returns the booking of given booking id
+      operationId: getBookingByBookingId
+      parameters:
+        - name: id
+          in: path
+          description: Booking Identifier
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: If Booking exists.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Booking'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Booking'
+        404:
+          description: Booking doesn't exist for given user.
+          content: {}
+  /api/v1/customers:
+    get:
+      tags:
+        - customer
+      summary: Returns all customers
+      description: Returns all customers, or empty collection if user is not found
+      operationId: getAllCustomers
+      responses:
+        200:
+          description: For successful fetch.
+          content:
+            application/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/User'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/User'
+    post:
+      tags:
+        - customer
+      summary: Creates a new customer
+      description: Creates a new customer. Does nothing if customer already exists.
+      operationId: createCustomer
+      requestBody:
+        content:
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/User'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+      responses:
+        200:
+          description: For successful fetch.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/User'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+  /api/v1/customers/{id}:
+    get:
+      tags:
+        - customer
+      summary: Returns a customer
+      description: Returns a customers identifiable by given ID
+      operationId: getCustomerById
+      parameters:
+        - name: id
+          in: path
+          description: Customer Identifier
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: For successful fetch.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/User'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+    delete:
+      tags:
+        - customer
+      summary: Deletes the customer
+      description: Deletes the customer identifiable by given ID
+      operationId: deleteCustomerById
+      parameters:
+        - name: id
+          in: path
+          description: Customer Identifier
+          required: true
+          schema:
+            type: string
+      responses:
+        202:
+          description: Request accepted, returns this status even if user does not exist
+          content: {}
+  /api/v1/restaurants:
+    get:
+      tags:
+        - restaurant
+      summary: Returns all restaurants
+      description: Returns all restaurants
+      operationId: getAllRestaurant
+      responses:
+        200:
+          description: For successful fetch.
+          content:
+            application/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Restaurant'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Restaurant'
+    post:
+      tags:
+        - restaurant
+      summary: Creates a new restaurant
+      description: Creates a new restaurant. Does nothing if restaurant already exists.
+      operationId: createRestaurant
+      requestBody:
+        content:
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/Restaurant'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Restaurant'
+      responses:
+        200:
+          description: For successful fetch.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Restaurant'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Restaurant'
+  /api/v1/restaurants/waiters:
+    get:
+      tags:
+        - waiter
+      summary: Returns all waiters
+      description: Returns all waiters for the given restaurant
+      operationId: getAllWaitersForGivenRestaurant
+      responses:
+        200:
+          description: For successful fetch.
+          content:
+            application/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Waiter'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Waiter'
+    post:
+      tags:
+        - waiter
+      summary: Creates a new waiter
+      description: Creates a new waiter. Does nothing if waiter already exists.
+      operationId: createWaiterForGivenRestaurant
+      requestBody:
+        content:
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/Waiter'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Waiter'
+      responses:
+        200:
+          description: For successful fetch.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Waiter'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Waiter'
+  /api/v1/restaurants/waiters/{waiterId}:
+    delete:
+      tags:
+        - waiter
+      summary: Delete a waiter
+      description: Delete a waiter based on given waiter ID.
+      operationId: deleteWaiterById
+      parameters:
+        - name: waiterId
+          in: path
+          description: waiter Identifier
+          required: true
+          schema:
+            type: string
+      responses:
+        202:
+          description: Accepts the deletion request and perform deletion. If ID does not exist, does nothing.
+          content: {}
+  /api/v1/{tableId}/upgrades:
+    get:
+      tags:
+        - upgrades
+      summary: Get all upgrades
+      description: Get all the upgrades by given table Id
+      operationId: getUpgradesByTableId
+      parameters:
+        - name: tableId
+          in: path
+          description: table Identifier
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: For successful fetch.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Upgrades'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Upgrades'
+    post:
+      tags:
+        - upgrades
+      summary: Adds upgrades to given table
+      description: Adds upgrades to given table
+      operationId: addUpgradesByTableId
+      parameters:
+        - name: tableId
+          in: path
+          description: table Identifier
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: Upgrades object
+        content:
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/Upgrades'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Upgrades'
+      responses:
+        201:
+          description: Upgrades added successfully
+          content:
+            application/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Upgrades'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Upgrades'
+        404:
+          description: Given table ID doesn't exist
+          content: {} 
+    put:
+      tags:
+        - upgrades
+      summary: Replace/add an upgrades in the table
+      description: Replace/add an upgrades in the table if it doesn't already exist, or replace with given upgrades if it does
+      operationId: addOrReplaceUpgradesByTableId
+      parameters:
+        - name: tableId
+          in: path
+          description: Table Identifier
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: Upgrades object
+        content:
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/Upgrades'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Upgrades'
+      responses:
+        201:
+          description: Upgrades added successfully
+          content:
+            application/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Upgrades'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Upgrades'
+        404:
+          description: Given table ID doesn't exist
+          content: {}
+    delete:
+      tags:
+        - upgrades
+      summary: Delete all upgrades for the given table
+      description: Delete all upgrades for the given table
+      operationId: deleteAllUpgradesByTableId
+      parameters:
+        - name: tableId
+          in: path
+          description: Table Identifier
+          required: true
+          schema:
+            type: string
+      responses:
+        202:
+          description: Request accepted, returns this status even if user does not exist
+          content: {}
+  /api/v1/{restaurantId}/menu:
+    get:
+      tags:
+        - menu
+      summary: Get the menu
+      description: Get menu by given restaurant Id
+      operationId: getMenuByRestaurantId
+      parameters:
+        - name: restaurantId
+          in: path
+          description: restaurant Identifier
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: For successful fetch.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Menu'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Menu'
+    post:
+      tags:
+        - menu
+      summary: Adds menu to given restaurant
+      description: Adds menu to given restaurant
+      operationId: addMenuByRestaurantId
+      parameters:
+        - name: restaurantId
+          in: path
+          description: restaurant Identifier
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: Menu object
+        content:
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/Menu'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Menu'
+      responses:
+        201:
+          description: Menu added successfully
+          content:
+            application/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Menu'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Menu'
+        404:
+          description: Given restaurant ID doesn't exist
+          content: {} 
+    put:
+      tags:
+        - menu
+      summary: Replace a menu in the table
+      description: Replace a menu with given upgrades
+      operationId: replaceMenuByRestaurantId
+      parameters:
+        - name: restaurantId
+          in: path
+          description: Restaurant Identifier
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: Restaurant object
+        content:
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/Menu'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Menu'
+      responses:
+        201:
+          description: Menu added successfully
+          content:
+            application/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Menu'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Menu'
+        404:
+          description: Given restaurant ID doesn't exist
+          content: {}
+    delete:
+      tags:
+        - menu
+      summary: Delete menu for the given restaurant
+      description: Delete menu for the given restaurant
+      operationId: deleteMenuByRestaurantId
+      parameters:
+        - name: restaurantId
+          in: path
+          description: Restaurant Identifier
+          required: true
+          schema:
+            type: string
+      responses:
+        202:
+          description: Request accepted, returns this status even if user does not exist
+          content: {}
+
+    
+components:
+  schemas: 
+    User:
+      type: object
+      properties:
+        id:
+          description: User Identifie
+          type: string
+        firstname:
+          type: string
+        lastname:
+          type: string
+        email:
+          type: string
+        phone:
+          type: string
+        username:
+          type: string
+        password:
+          type: string
+        bookings:
+          description: Collection of Bookings
+          type: array
+          items:
+            $ref: '#/components/schemas/Booking'
+        restaurant:
+          $ref: '#/components/schemas/Restaurant'
+      xml:
+        name: User
+    Booking:
+      type: object
+      properties:
+        id:          
+          description: Booking Identifier
+          type: string
+        date:
+          type: string
+          format: date-time
+        seatsNo:
+          type: integer
+          format: int32
+        user:
+          $ref: '#/components/schemas/User'
+        services:
+          description: Collection of Services
+          type: array
+          items:
+            $ref: '#/components/schemas/Service'
+      xml:
+        name: Booking
+    Service:
+      type: object
+      properties:
+        id:
+          description: Service identifier
+          type: string
+        waiter:
+          $ref: '#/components/schemas/Waiter'
+        table:
+          $ref: '#/components/schemas/RestTable'
+        booking:
+          $ref: '#/components/schemas/Booking'
+      xml:
+        name: Service
+    RestTable:
+      type: object
+      properties:
+        id:
+          description: Table identifier
+          type: string
+        name:
+          type: string
+        table_seats:
+          type: integer
+          format: int32
+        restaurant:
+          $ref: '#/components/schemas/Restaurant'
+        services:
+          description: Collection of Services
+          type: array
+          items:
+            $ref: '#/components/schemas/Service'
+        upgrades:
+          $ref: '#/components/schemas/Upgrades'
+      xml:
+        name: Tag
+    Upgrades:
+      type: object
+      properties:
+        id:
+          description: Upgrades identifier
+          type: string
+        quantity:
+          type: integer
+          format: int32
+        unitPrice:
+          type: number
+        drink:
+          type: string
+        special_food:
+          type: string
+        dietary:
+          type: string
+        waiters:
+          description: Collection of Waiters
+          type: array
+          items:
+            $ref: '#/components/schemas/Waiter'
+        table:
+            $ref: '#/components/schemas/RestTable'
+      xml:
+        name: Upgrades
+    Restaurant:
+      type: object
+      properties:
+        id:
+          description: Restaurant identifier
+          type: string
+        tablesNo:
+          type: integer
+          format: int32
+        tables:
+          description: Collection of Tables
+          type: array
+          items:
+            $ref: '#/components/schemas/RestTable'
+        history:
+          type: string
+        address:
+          type: string
+        city:
+          type: string
+        phone:
+          type: string
+        email:
+          type: string
+        menu:
+          $ref: '#/components/schemas/Menu'
+        users:
+          description: Collection of Users
+          type: array
+          items:
+            $ref: '#/components/schemas/User'  
+        waiters:
+          description: Collection of Waiters
+          type: array
+          items:
+            $ref: '#/components/schemas/Waiter'     
+      xml:
+        name: Restaurant
+    Menu:
+        type: object
+        properties:
+          id:
+            description: Menu identifier
+            type: string
+          food:
+            type: string
+          drink:
+            type: string
+          quantity:
+            type: integer
+          unitPrice:
+            type: number
+          restaurant:
+            $ref: '#/components/schemas/Restaurant'
+        xml:
+          name: Menu
+    Waiter:
+        type: object
+        properties:
+          id:
+            description: Waiter identifier
+            type: string
+          fullname:
+            type: string
+          restaurant:
+            $ref: '#/components/schemas/Restaurant'
+          services:
+            description: Collection of Services
+            type: array
+            items:
+             $ref: '#/components/schemas/Service'
+          upgrades:
+            description: Collection of Upgrades
+            type: array
+            items:
+              $ref: '#/components/schemas/Upgrades'
+        xml:
+          name: Waiter
