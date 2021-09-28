@@ -11,4 +11,7 @@ import java.util.UUID;
  * UPDATE PROGRAM COMMENTS ABOUT PROGRAM HERE
  **/
 @Repository
-public interface MenuRepository extends JpaRepository<MenuEntity, UUID> {}
+public interface MenuRepository extends JpaRepository<MenuEntity, UUID> {
+
+    MenuEntity findByRestaurantId(UUID fromString);
+}

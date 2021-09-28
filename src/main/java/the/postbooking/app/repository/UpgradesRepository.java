@@ -11,4 +11,6 @@ import java.util.UUID;
  * UPDATE PROGRAM COMMENTS ABOUT PROGRAM HERE
  **/
 @Repository
-public interface UpgradesRepository extends JpaRepository<UpgradesEntity, UUID> {}
+public interface UpgradesRepository extends JpaRepository<UpgradesEntity, UUID> {
+    UpgradesEntity findByTableId(UUID fromString);
+}

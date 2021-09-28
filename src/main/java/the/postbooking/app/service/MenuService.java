@@ -14,4 +14,5 @@ public interface MenuService {
     public MenuEntity getMenuByRestaurantId(String restaurantId);
     public void deleteMenuByRestaurantId(String restaurantId);
     public MenuEntity replaceMenuByRestaurantId(String restaurantId, @Valid Menu menu);
+    public MenuEntity toEntity(Menu menu);
 }
