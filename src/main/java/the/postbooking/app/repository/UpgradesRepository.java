@@ -1,6 +1,7 @@
 package the.postbooking.app.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 import the.postbooking.app.entity.UpgradesEntity;
 
@@ -12,5 +13,6 @@ import java.util.UUID;
  **/
 @Repository
 public interface UpgradesRepository extends JpaRepository<UpgradesEntity, UUID> {
+    @Query(value = "select * from erest.upgrades inner join erest.table on erest.table.ID = :fromString", nativeQuery = true)
     UpgradesEntity findByTableId(UUID fromString);
 }

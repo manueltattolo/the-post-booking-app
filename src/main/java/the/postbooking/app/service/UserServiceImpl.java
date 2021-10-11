@@ -25,7 +25,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public UserEntity createCustomer(@Valid User user) {
+    public User createCustomer(@Valid User user) {
         if (Strings.isEmpty(user.getEmail())) {
             throw new ResourceNotFoundException("Invalid email.");
         }
@@ -41,7 +41,8 @@ public class UserServiceImpl implements UserService {
         if (Strings.isEmpty(user.getLastname())) {
             throw new ResourceNotFoundException("Invalid last name.");
         }
-        return repository.save(toEntity(user));
+        repository.save(toEntity(user));
+        return user;
     }
 
     @Override

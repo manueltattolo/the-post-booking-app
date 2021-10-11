@@ -33,13 +33,34 @@ tags:
     description: Operations about table service
   - name: waiter
     description: Operations about waiters
-    
+  
 paths:
+  /api/v1/bookings:
+    get:
+      tags:
+        - booking
+      summary: Returns all bookings
+      description: Returns all bookings
+      operationId: getAllBookings
+      responses:
+        200:
+          description: For successful fetch.
+          content:
+            application/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Booking'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Booking'
   /api/v1/{customerId}/booking:
     get:
       tags:
         - booking
-      summary: Returns the booking
+      summary: Returns the booking of given customer
       description: Returns the booking of given customer
       operationId: getBookingsByCustomerId
       parameters:
@@ -119,7 +140,7 @@ paths:
         - service
       summary: Returns the list of booked services
       description: Returns the table and service booked by the given customer
-      operationId: getBookedTablesByCustomerId
+      operationId: getServicesByBookingId
       parameters:
         - name: bookingId
           in: path
@@ -135,12 +156,12 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Service'
+                  $ref: '#/components/schemas/RestService'
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Service'
+                  $ref: '#/components/schemas/RestService'
         404:
           description: Given customer ID doesn't exist
           content: {}
@@ -162,10 +183,10 @@ paths:
         content:
           application/xml:
             schema:
-              $ref: '#/components/schemas/Service'
+              $ref: '#/components/schemas/RestService'
           application/json:
             schema:
-              $ref: '#/components/schemas/Service'
+              $ref: '#/components/schemas/RestService'
       responses:
         201:
           description: Service/Table added successfully
@@ -174,12 +195,12 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Service'
+                  $ref: '#/components/schemas/RestService'
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Service'
+                  $ref: '#/components/schemas/RestService'
         404:
           description: Given customer ID doesn't exist
           content: {} 
@@ -201,10 +222,10 @@ paths:
         content:
           application/xml:
             schema:
-              $ref: '#/components/schemas/Service'
+              $ref: '#/components/schemas/RestService'
           application/json:
             schema:
-              $ref: '#/components/schemas/Service'
+              $ref: '#/components/schemas/RestService'
       responses:
         201:
           description: Service/Table added successfully
@@ -213,25 +234,25 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Service'
+                  $ref: '#/components/schemas/RestService'
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Service'
+                  $ref: '#/components/schemas/RestService'
         404:
           description: Given customer ID doesn't exist
           content: {}
     delete:
       tags:
         - service
-      summary: Delete all services for the given customer
-      description: Delete all services for the given customer
-      operationId: deleteServicesByCustomerId
+      summary: Delete all services for the given booking
+      description: Delete all services for the given booking
+      operationId: deleteServicesByBookingId
       parameters:
         - name: bookingId
           in: path
-          description: Customer Identifier
+          description: Booking Identifier
           required: true
           schema:
             type: string
@@ -348,14 +369,10 @@ paths:
           content:
             application/xml:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/Booking'
+                $ref: '#/components/schemas/Booking'
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/Booking'
+                $ref: '#/components/schemas/Booking'
         406:
           description: If payment is not authorized.
           content: {}
@@ -867,10 +884,10 @@ components:
           description: Collection of Services
           type: array
           items:
-            $ref: '#/components/schemas/Service'
+            $ref: '#/components/schemas/RestService'
       xml:
         name: Booking
-    Service:
+    RestService:
       type: object
       properties:
         id:
@@ -901,7 +918,7 @@ components:
           description: Collection of Services
           type: array
           items:
-            $ref: '#/components/schemas/Service'
+            $ref: '#/components/schemas/RestService'
         upgrades:
           $ref: '#/components/schemas/Upgrades'
       xml:
@@ -1002,7 +1019,7 @@ components:
             description: Collection of Services
             type: array
             items:
-             $ref: '#/components/schemas/Service'
+             $ref: '#/components/schemas/RestService'
           upgrades:
             description: Collection of Upgrades
             type: array

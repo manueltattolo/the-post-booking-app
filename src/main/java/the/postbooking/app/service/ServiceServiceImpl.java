@@ -2,6 +2,7 @@ package the.postbooking.app.service;
 
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
+import postbookingapp.api.RestService;
 import the.postbooking.app.entity.ServiceEntity;
 import the.postbooking.app.entity.TableEntity;
 import the.postbooking.app.exception.GenericAlreadyExistsException;
@@ -39,7 +40,7 @@ public class ServiceServiceImpl implements ServiceService {
     }
 
     @Override //method to assign services by frontend with bookingId
-    public List<ServiceEntity> addServicesByBookingId(String bookingId, @Valid postbookingapp.api.Service service) {
+    public List<RestService> addServicesByBookingId(String bookingId, @Valid RestService service) {
         List<ServiceEntity> services = getServicesByBookingId(bookingId);
         //checking if service is already in the system
         long count = services.stream()
@@ -50,12 +51,12 @@ public class ServiceServiceImpl implements ServiceService {
         }
         //adding service to the service list
         services.add(toEntity(service));
-
-        return repository.saveAll(services);
+        repository.saveAll(services);
+        return Collections.singletonList(service);
     }
 
     @Override
-    public List<ServiceEntity> addOrReplaceServicesByBookingId(String bookingId, @Valid postbookingapp.api.Service service) {
+    public List<RestService> addOrReplaceServicesByBookingId(String bookingId, @Valid RestService service) {
         List<ServiceEntity> services = getServicesByBookingId(bookingId);
         services = Objects.nonNull(services) ? services : Collections.emptyList();
         AtomicBoolean serviceExists = new AtomicBoolean(false);
@@ -71,7 +72,8 @@ public class ServiceServiceImpl implements ServiceService {
         if (!serviceExists.get()) {
             services.add(toEntity(service));
         }
-        return repository.saveAll(services);
+        repository.saveAll(services);
+        return Collections.singletonList(service);
     }
 
     @Override
@@ -100,7 +102,7 @@ public class ServiceServiceImpl implements ServiceService {
         return repository.save(newService);
     }
 
-    public ServiceEntity toEntity(postbookingapp.api.Service s) {
+    public ServiceEntity toEntity(RestService s) {
         ServiceEntity entity = new ServiceEntity();
         entity.setBooking(bookSer.getBookingByBookingId(s.getBooking().getId()));
         entity.setRest_table(tableRep.findById(UUID.fromString(s.getTable().getId()))

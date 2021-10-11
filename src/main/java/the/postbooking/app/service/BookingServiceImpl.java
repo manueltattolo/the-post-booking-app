@@ -35,7 +35,7 @@ public class BookingServiceImpl implements BookingService {
     }
 
     @Override
-    public BookingEntity addBooking(@Valid Booking booking) {
+    public Booking addBooking(@Valid Booking booking) {
         if (Objects.isNull(booking.getUser())) {
             throw new ResourceNotFoundException("Invalid customer id.");
         }
@@ -85,7 +85,7 @@ public class BookingServiceImpl implements BookingService {
                 serviSer.addServiceByBookingId(newBooking.getId().toString(), table);
             }
         }
-        return newBooking;
+        return booking;
     }
 
     @Override

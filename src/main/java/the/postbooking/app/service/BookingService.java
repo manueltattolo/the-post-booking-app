@@ -12,7 +12,7 @@ import java.util.List;
  **/
 public interface BookingService {
 
-    public BookingEntity addBooking(@Valid Booking booking);
+    public Booking addBooking(@Valid Booking booking);
 
     public void deleteBooking(String customerId);
 

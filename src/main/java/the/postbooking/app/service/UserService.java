@@ -12,7 +12,7 @@ import java.util.List;
  **/
 public interface UserService {
 
-    public UserEntity createCustomer(@Valid User user);
+    public User createCustomer(@Valid User user);
 
     public void deleteCustomerById(String customerId);
 
