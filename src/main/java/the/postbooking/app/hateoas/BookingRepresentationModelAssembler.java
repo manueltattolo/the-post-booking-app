@@ -37,7 +37,7 @@ public class BookingRepresentationModelAssembler extends
     }
 
     /**
-     * Coverts the Card entity to resource
+     * Coverts the Booking entity to resource
      *
      * @param entity
      */

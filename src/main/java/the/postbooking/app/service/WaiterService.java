@@ -11,7 +11,7 @@ import java.util.List;
  * UPDATE PROGRAM COMMENTS ABOUT PROGRAM HERE
  **/
 public interface WaiterService {
-    public WaiterEntity createWaiterForGivenRestaurant(@Valid Waiter waiter);
+    public Waiter createWaiterForGivenRestaurant(@Valid Waiter waiter);
     public void deleteWaiterById(String waiterId);
     public List<WaiterEntity> getAllWaitersForGivenRestaurant();
 }

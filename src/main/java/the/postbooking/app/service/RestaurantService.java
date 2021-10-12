@@ -11,7 +11,7 @@ import java.util.List;
  * UPDATE PROGRAM COMMENTS ABOUT PROGRAM HERE
  **/
 public interface RestaurantService {
-    public RestaurantEntity createRestaurant(@Valid Restaurant restaurant);
+    public Restaurant createRestaurant(@Valid Restaurant restaurant);
     public List<RestaurantEntity> getAllRestaurants();
     public RestaurantEntity toEntity(Restaurant restaurant);
 }

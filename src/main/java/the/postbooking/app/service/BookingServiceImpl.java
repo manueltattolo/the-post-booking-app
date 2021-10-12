@@ -117,6 +117,7 @@ public class BookingServiceImpl implements BookingService {
         ori.setDateTime(mod.getDateTime());
         ori.setServices(mod.getServices());
         ori.setSeatsNo(mod.getSeatsNo());
+        repository.save(ori);
         return ori;
     }
 

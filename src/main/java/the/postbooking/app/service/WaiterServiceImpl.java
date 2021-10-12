@@ -30,7 +30,7 @@ public class WaiterServiceImpl implements WaiterService {
     }
 
     @Override
-    public WaiterEntity createWaiterForGivenRestaurant(@Valid Waiter waiter) {
+    public Waiter createWaiterForGivenRestaurant(@Valid Waiter waiter) {
         if (Strings.isEmpty(waiter.getFullname())) {
             throw new ResourceNotFoundException("Invalid name.");
         }
@@ -40,8 +40,8 @@ public class WaiterServiceImpl implements WaiterService {
         if (Objects.nonNull(repository.findByFullname(toEntity(waiter).getFullname()))) {
             throw new GenericAlreadyExistsException("Waiter already in the system.");
         }
-
-        return repository.save(toEntity(waiter));
+        repository.save(toEntity(waiter));
+        return waiter;
     }
 
     @Override

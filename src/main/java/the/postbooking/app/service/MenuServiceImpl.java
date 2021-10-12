@@ -8,6 +8,8 @@ import the.postbooking.app.repository.MenuRepository;
 import the.postbooking.app.repository.RestaurantRepository;
 
 import javax.validation.Valid;
+import java.util.Collections;
+import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
 
@@ -27,11 +29,12 @@ public class MenuServiceImpl implements MenuService {
     }
 
     @Override
-    public MenuEntity addMenuByRestaurantId(String restaurantId, @Valid Menu menu) {
+    public List<Menu> addMenuByRestaurantId(String restaurantId, @Valid Menu menu) {
         if (Objects.isNull(menu.getRestaurant())) {
             throw new ResourceNotFoundException("Invalid restaurant id.");
         }
-        return repository.save(toEntity(menu));
+        repository.save(toEntity(menu));
+        return Collections.singletonList(menu);
     }
 
     @Override
@@ -45,7 +48,7 @@ public class MenuServiceImpl implements MenuService {
     }
 
     @Override
-    public MenuEntity replaceMenuByRestaurantId(String restaurantId, @Valid Menu menu) {
+    public List<Menu> replaceMenuByRestaurantId(String restaurantId, @Valid Menu menu) {
         MenuEntity ori = getMenuByRestaurantId(restaurantId);
         MenuEntity mod = toEntity(menu);
         ori.setUnitPrice(mod.getUnitPrice());
@@ -53,7 +56,8 @@ public class MenuServiceImpl implements MenuService {
         ori.setDrink(mod.getDrink());
         ori.setFood(mod.getFood());
         ori.setUnitPrice(mod.getUnitPrice());
-        return ori;
+        repository.save(ori);
+        return Collections.singletonList(menu);
     }
 
     @Override

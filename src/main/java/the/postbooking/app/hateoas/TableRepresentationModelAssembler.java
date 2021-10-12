@@ -3,9 +3,9 @@ package the.postbooking.app.hateoas;
 import org.springframework.beans.BeanUtils;
 import org.springframework.hateoas.server.mvc.RepresentationModelAssemblerSupport;
 import org.springframework.stereotype.Component;
-import postbookingapp.api.RestService;
-import the.postbooking.app.controller.ServiceController;
-import the.postbooking.app.entity.ServiceEntity;
+import postbookingapp.api.RestTable;
+import the.postbooking.app.controller.TableController;
+import the.postbooking.app.entity.TableEntity;
 
 import java.util.Collections;
 import java.util.List;
@@ -17,42 +17,43 @@ import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 
 /**
- * Created by Emanuele Tattolo on 10/10/2021
+ * Created by Emanuele Tattolo on 11/10/2021
  * UPDATE PROGRAM COMMENTS ABOUT PROGRAM HERE
  **/
 @Component
-public class ServiceRepresentationModelAssembler extends
-      RepresentationModelAssemblerSupport<ServiceEntity, RestService> {
+public class TableRepresentationModelAssembler
+      extends RepresentationModelAssemblerSupport<TableEntity, RestTable> {
+
     /**
      * Creates a new {@link RepresentationModelAssemblerSupport} using the given controller class and resource type.
      *
      * @param controllerClass must not be {@literal null}.
      * @param resourceType    must not be {@literal null}.
      */
-    public ServiceRepresentationModelAssembler(Class<?> controllerClass, Class<RestService> resourceType) {
+    public TableRepresentationModelAssembler(Class<?> controllerClass, Class<RestTable> resourceType) {
         super(controllerClass, resourceType);
     }
 
     /**
-     * Coverts the Service entity to resource
+     * Coverts the Table entity to resource
      *
      * @param entity
      */
     @Override
-    public RestService toModel(ServiceEntity entity) {
-        String bid = Objects.nonNull(entity.getId()) ? entity.getId().toString() : null;
-        RestService resource = new RestService();
+    public RestTable toModel(TableEntity entity) {
+        String rid = Objects.nonNull(entity.getRestaurant()) ? entity.getRestaurant().getId().toString() : null;
+        RestTable resource = new RestTable();
         BeanUtils.copyProperties(entity, resource);
-        resource.add(linkTo(methodOn(ServiceController.class).getServicesByBookingId(bid)).withRel("services"));
+        resource.add(linkTo(methodOn(TableController.class).getTablesByRestaurantId(rid)).withRel("tables"));
         return resource;
     }
 
     /**
-     * Coverts the collection of Service entities to list of resources.
+     * Coverts the collection of Table entities to list of resources.
      *
      * @param entities
      */
-    public List<RestService> toListModel(List<ServiceEntity> entities) {
+    public List<RestTable> toListModel(List<TableEntity> entities) {
         if(Objects.isNull(entities)) {
             return Collections.emptyList();
         }

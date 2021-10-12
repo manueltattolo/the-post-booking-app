@@ -53,7 +53,7 @@ public class UserRepresentationModelAssembler extends RepresentationModelAssembl
     }
 
     /**
-     * Coverts the collection of Product entities to list of resources.
+     * Coverts the collection of User entities to list of resources.
      *
      * @param entities
      */

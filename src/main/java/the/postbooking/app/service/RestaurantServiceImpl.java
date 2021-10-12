@@ -3,7 +3,6 @@ package the.postbooking.app.service;
 import org.springframework.stereotype.Service;
 import postbookingapp.api.Restaurant;
 import the.postbooking.app.entity.RestaurantEntity;
-import the.postbooking.app.entity.TableEntity;
 import the.postbooking.app.exception.ResourceNotFoundException;
 import the.postbooking.app.repository.RestaurantRepository;
 
@@ -23,11 +22,12 @@ public class RestaurantServiceImpl implements RestaurantService {
     public RestaurantServiceImpl(RestaurantRepository repository) { this.repository = repository; }
 
     @Override
-    public RestaurantEntity createRestaurant(@Valid Restaurant restaurant) {
+    public Restaurant createRestaurant(@Valid Restaurant restaurant) {
              if ((restaurant.getTablesNo()) == null) {
                  throw new ResourceNotFoundException("Invalid Tables number.");
              }
-             return repository.save(toEntity(restaurant));
+             repository.save(toEntity(restaurant));
+             return restaurant;
     }
 
     @Override

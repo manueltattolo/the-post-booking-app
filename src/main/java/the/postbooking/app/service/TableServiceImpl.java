@@ -35,7 +35,7 @@ public class TableServiceImpl implements TableService {
     @Override
     public List<TableEntity> getTablesByCustomerId(String customerId) {
         return repository.findByCustomerId(UUID.fromString(customerId));
-    }
+    } //not used and not on the API
 
     @Override
     public List<TableEntity> getTablesByRestaurantId(String restaurantId) {
@@ -43,15 +43,16 @@ public class TableServiceImpl implements TableService {
     }
 
     @Override
-    public TableEntity addtableByRestaurantId(String restaurantId, @Valid RestTable table) {
+    public RestTable addTableByRestaurantId(String restaurantId, @Valid RestTable table) {
         if (Objects.isNull(table.getTableSeats())) {
             throw new ResourceNotFoundException("No seats number on the table.");
         }
-        return repository.save(toEntity(restaurantId, table));
+        repository.save(toEntity(restaurantId, table));
+        return table;
     }
     //modify table or service?
-
     //getTablesByServices??
+
     @Override
     public TableEntity toEntity(String restaurantId, RestTable t) {
         TableEntity entity = new TableEntity();

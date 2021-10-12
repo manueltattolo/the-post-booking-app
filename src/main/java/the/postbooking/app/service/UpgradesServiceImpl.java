@@ -8,6 +8,8 @@ import the.postbooking.app.repository.TableRepository;
 import the.postbooking.app.repository.UpgradesRepository;
 
 import javax.validation.Valid;
+import java.util.Collections;
+import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
 
@@ -27,16 +29,16 @@ public class UpgradesServiceImpl implements UpgradesService {
     }
 
     @Override
-    public UpgradesEntity addUpgradesByTableId(String tableId, @Valid Upgrades upgrades) {
+    public List<Upgrades> addUpgradesByTableId(String tableId, @Valid Upgrades upgrades) {
         if (Objects.isNull(upgrades.getTable())) {
             throw new ResourceNotFoundException("Invalid table id.");
         }
-
-        return repository.save(toEntity(upgrades));
+        repository.save(toEntity(upgrades));
+        return Collections.singletonList(upgrades);
     }
 
     @Override
-    public UpgradesEntity addOrReplaceUpgradesByTableId(String tableId, @Valid Upgrades upgrades) {
+    public List<Upgrades> addOrReplaceUpgradesByTableId(String tableId, @Valid Upgrades upgrades) {
         UpgradesEntity ori = getUpgradesByTableId(tableId);
         UpgradesEntity mod = toEntity(upgrades);
         ori.setDietary(mod.getDietary());
@@ -45,7 +47,8 @@ public class UpgradesServiceImpl implements UpgradesService {
         ori.setRest_table(mod.getRest_table());
         ori.setUnitPrice(mod.getUnitPrice());
         ori.setSpecial_food(mod.getSpecial_food());
-        return ori;
+        repository.save(ori);
+        return Collections.singletonList(upgrades);
     }
 
     @Override

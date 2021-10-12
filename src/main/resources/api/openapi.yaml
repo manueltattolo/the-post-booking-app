@@ -266,7 +266,7 @@ paths:
         - table
       summary: Returns given tables from customer's booking
       description: Returns given table from booking of given customer
-      operationId: getTableByCustomerId
+      operationId: getTablesByRestaurantId
       parameters:
         - name: customerId
           in: path
@@ -297,7 +297,7 @@ paths:
         - table
       summary: Delete the table from service and booking
       description: Deletes the table from the booking'service of given customer
-      operationId: deleteTableFromBooking
+      operationId: deleteTableFromTableId
       parameters:
         - name: tableId
           in: path
@@ -314,6 +314,7 @@ paths:
         - table
       summary: Adds table to given restaurant
       description: Adds table to given restaurant
+      operationId: addTableByRestaurantId
       parameters:
         - name: restaurantId
           in: path
@@ -332,18 +333,14 @@ paths:
               $ref: '#/components/schemas/RestTable'
       responses:
         201:
-          description: Upgrades added successfully
+          description: Table added successfully
           content:
             application/xml:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/Upgrades'
+                $ref: '#/components/schemas/RestTable'
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/Upgrades'
+                $ref: '#/components/schemas/Upgrades'
         404:
           description: Given table ID doesn't exist
           content: {} 
@@ -374,7 +371,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/Booking'
         406:
-          description: If payment is not authorized.
+          description: If booking is not authorized.
           content: {}
   /api/v1/bookings/{id}:
     get:
