@@ -1,6 +1,7 @@
 package the.postbooking.app.hateoas;
 
 import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.server.mvc.RepresentationModelAssemblerSupport;
 import org.springframework.stereotype.Component;
 import postbookingapp.api.Booking;
@@ -29,10 +30,8 @@ public class BookingRepresentationModelAssembler extends
     /**
      * Creates a new {@link RepresentationModelAssemblerSupport} using the given controller class and resource type.
      *
-     * @param controllerClass must not be {@literal null}.
-     * @param resourceType    must not be {@literal null}.
      */
-    public BookingRepresentationModelAssembler(Class<?> controllerClass, Class<Booking> resourceType) {
+    public BookingRepresentationModelAssembler() {
         super(BookingController.class, Booking.class);
     }
 

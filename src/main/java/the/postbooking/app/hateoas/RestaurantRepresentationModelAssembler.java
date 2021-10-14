@@ -27,11 +27,9 @@ public class RestaurantRepresentationModelAssembler extends RepresentationModelA
     /**
      * Creates a new {@link RepresentationModelAssemblerSupport} using the given controller class and resource type.
      *
-     * @param controllerClass must not be {@literal null}.
-     * @param resourceType    must not be {@literal null}.
      */
-    public RestaurantRepresentationModelAssembler(Class<?> controllerClass, Class<Restaurant> resourceType) {
-        super(controllerClass, resourceType);
+    public RestaurantRepresentationModelAssembler() {
+        super(RestaurantController.class, Restaurant.class);
     }
 
     /**

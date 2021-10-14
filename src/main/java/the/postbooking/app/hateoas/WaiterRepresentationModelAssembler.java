@@ -27,11 +27,9 @@ public class WaiterRepresentationModelAssembler extends RepresentationModelAssem
     /**
      * Creates a new {@link RepresentationModelAssemblerSupport} using the given controller class and resource type.
      *
-     * @param controllerClass must not be {@literal null}.
-     * @param resourceType    must not be {@literal null}.
      */
-    public WaiterRepresentationModelAssembler(Class<?> controllerClass, Class<Waiter> resourceType) {
-        super(controllerClass, resourceType);
+    public WaiterRepresentationModelAssembler() {
+        super(WaiterController.class, Waiter.class);
     }
 
     /**

@@ -1,38 +1,39 @@
-2021-10-11 13:33:31.376      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 9536 --- [           main] t.p.app.ThePostBookingAppApplication     : Starting ThePostBookingAppApplication on LAPTOP-FILOA8TL with PID 9536 (C:\Users\User\Desktop\Uni\Final Project\Implementation\the-post-booking-app\build\classes\java\main started by User in C:\Users\User\Desktop\Uni\Final Project\Implementation\the-post-booking-app)
-2021-10-11 13:33:31.423      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 9536 --- [           main] t.p.app.ThePostBookingAppApplication     : No active profile set, falling back to default profiles: default
-2021-10-11 13:33:32.845      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 9536 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-10-11 13:33:33.120      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 9536 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 233ms. Found 8 JPA repository interfaces.
-2021-10-11 13:33:34.602      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 9536 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2021-10-11 13:33:34.618      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 9536 --- [           main] o.a.coyote.http11.Http11NioProtocol      : Initializing ProtocolHandler ["http-nio-8080"]
-2021-10-11 13:33:34.634      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 9536 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-10-11 13:33:34.634      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 9536 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
-2021-10-11 13:33:34.852      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 9536 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2021-10-11 13:33:34.852      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 9536 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3262 ms
-2021-10-11 13:33:34.962      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 9536 --- [           main] com.zaxxer.hikari.HikariDataSource       : erest - Starting...
-2021-10-11 13:33:35.260      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 9536 --- [           main] com.zaxxer.hikari.HikariDataSource       : erest - Start completed.
-2021-10-11 13:33:35.276      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 9536 --- [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:erest'
-2021-10-11 13:33:35.458      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 9536 --- [           main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 6.4.4 by Redgate
-2021-10-11 13:33:35.489      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 9536 --- [           main] o.f.c.internal.database.DatabaseFactory  : Database: jdbc:h2:mem:erest (H2 1.4)
-2021-10-11 13:33:35.589      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 9536 --- [           main] o.f.core.internal.database.base.Schema   : Creating schema "erest" ...
-2021-10-11 13:33:35.605      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 9536 --- [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table "erest"."flyway_schema_history" ...
-2021-10-11 13:33:35.723      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 9536 --- [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "erest": null
-2021-10-11 13:33:35.791      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 9536 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "erest" to version 1.0.1 - name
-2021-10-11 13:33:36.060      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 9536 --- [           main] o.f.core.internal.command.DbMigrate      : Successfully applied 1 migration to schema "erest" (execution time 00:00.359s)
-2021-10-11 13:33:36.318      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 9536 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-10-11 13:33:36.443      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 9536 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.22.Final
-2021-10-11 13:33:36.733      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 9536 --- [           main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2021-10-11 13:33:36.952      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 9536 --- [           main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2021-10-11 13:33:38.424      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 9536 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-10-11 13:33:38.456      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 9536 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-10-11 13:33:39.178      WARN [the-post-booking-app,,,]     [null] [null] [null]     [null] 9536 --- [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'bookingController' defined in file [C:\Users\User\Desktop\Uni\Final Project\Implementation\the-post-booking-app\build\classes\java\main\the\postbooking\app\controller\BookingController.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'the.postbooking.app.hateoas.BookingRepresentationModelAssembler' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
-2021-10-11 13:33:39.178      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 9536 --- [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2021-10-11 13:33:39.194      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 9536 --- [           main] com.zaxxer.hikari.HikariDataSource       : erest - Shutdown initiated...
-2021-10-11 13:33:39.194      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 9536 --- [           main] com.zaxxer.hikari.HikariDataSource       : erest - Shutdown completed.
-2021-10-11 13:33:39.194      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 9536 --- [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2021-10-11 13:33:39.209      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 9536 --- [           main] ConditionEvaluationReportLoggingListener : 
+2021-10-13 14:50:54.956      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 15420 --- [kground-preinit] o.h.validator.internal.util.Version      : HV000001: Hibernate Validator 6.1.6.Final
+2021-10-13 14:50:54.983      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 15420 --- [           main] t.p.app.ThePostBookingAppApplication     : Starting ThePostBookingAppApplication on PC-0003 with PID 15420 (C:\Users\Alim Khowaja\Desktop\Alim Stuff\upwork\Post Booking App\the-post-booking-app\build\classes\java\main started by Alim Khowaja in C:\Users\Alim Khowaja\Desktop\Alim Stuff\upwork\Post Booking App\the-post-booking-app)
+2021-10-13 14:50:54.984      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 15420 --- [           main] t.p.app.ThePostBookingAppApplication     : No active profile set, falling back to default profiles: default
+2021-10-13 14:50:55.745      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 15420 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-10-13 14:50:55.896      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 15420 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 144ms. Found 8 JPA repository interfaces.
+2021-10-13 14:50:56.501      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 15420 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-10-13 14:50:56.508      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 15420 --- [           main] o.a.coyote.http11.Http11NioProtocol      : Initializing ProtocolHandler ["http-nio-8080"]
+2021-10-13 14:50:56.508      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 15420 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-10-13 14:50:56.509      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 15420 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2021-10-13 14:50:56.613      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 15420 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-10-13 14:50:56.613      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 15420 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1565 ms
+2021-10-13 14:50:56.664      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 15420 --- [           main] com.zaxxer.hikari.HikariDataSource       : erest - Starting...
+2021-10-13 14:50:56.896      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 15420 --- [           main] com.zaxxer.hikari.HikariDataSource       : erest - Start completed.
+2021-10-13 14:50:56.905      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 15420 --- [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:erest'
+2021-10-13 14:50:57.024      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 15420 --- [           main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 6.4.4 by Redgate
+2021-10-13 14:50:57.033      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 15420 --- [           main] o.f.c.internal.database.DatabaseFactory  : Database: jdbc:h2:mem:erest (H2 1.4)
+2021-10-13 14:50:57.115      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 15420 --- [           main] o.f.core.internal.database.base.Schema   : Creating schema "erest" ...
+2021-10-13 14:50:57.126      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 15420 --- [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table "erest"."flyway_schema_history" ...
+2021-10-13 14:50:57.201      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 15420 --- [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "erest": null
+2021-10-13 14:50:57.210      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 15420 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "erest" to version 1.0.1 - name
+2021-10-13 14:50:57.256      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 15420 --- [           main] o.f.core.internal.command.DbMigrate      : Successfully applied 1 migration to schema "erest" (execution time 00:00.065s)
+2021-10-13 14:50:57.340      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 15420 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-10-13 14:50:57.392      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 15420 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.22.Final
+2021-10-13 14:50:57.547      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 15420 --- [           main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2021-10-13 14:50:57.655      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 15420 --- [           main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-10-13 14:50:58.590      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 15420 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-10-13 14:50:58.596      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 15420 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-10-13 14:50:58.925      WARN [the-post-booking-app,,,]     [null] [null] [null]     [null] 15420 --- [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'bookingController' defined in file [C:\Users\Alim Khowaja\Desktop\Alim Stuff\upwork\Post Booking App\the-post-booking-app\build\classes\java\main\the\postbooking\app\controller\BookingController.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'the.postbooking.app.hateoas.BookingRepresentationModelAssembler' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2021-10-13 14:50:58.926      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 15420 --- [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-10-13 14:50:58.928      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 15420 --- [           main] com.zaxxer.hikari.HikariDataSource       : erest - Shutdown initiated...
+2021-10-13 14:50:58.929      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 15420 --- [           main] com.zaxxer.hikari.HikariDataSource       : erest - Shutdown completed.
+2021-10-13 14:50:58.931      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 15420 --- [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2021-10-13 14:50:58.939      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 15420 --- [           main] ConditionEvaluationReportLoggingListener : 
 
 Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2021-10-11 13:33:39.366     ERROR [the-post-booking-app,,,]     [null] [null] [null]     [null] 9536 --- [           main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+2021-10-13 14:50:59.028     ERROR [the-post-booking-app,,,]     [null] [null] [null]     [null] 15420 --- [           main] o.s.b.d.LoggingFailureAnalysisReporter   : 
 
 ***************************
 APPLICATION FAILED TO START
@@ -47,33 +48,42 @@ Action:
 
 Consider defining a bean of type 'the.postbooking.app.hateoas.BookingRepresentationModelAssembler' in your configuration.
 
-2021-10-11 14:50:01.695      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 14844 --- [    Test worker] t.p.a.ThePostBookingAppApplicationTests  : Starting ThePostBookingAppApplicationTests on LAPTOP-FILOA8TL with PID 14844 (started by User in C:\Users\User\Desktop\Uni\Final Project\Implementation\the-post-booking-app)
-2021-10-11 14:50:01.697      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 14844 --- [    Test worker] t.p.a.ThePostBookingAppApplicationTests  : No active profile set, falling back to default profiles: default
-2021-10-11 14:50:03.085      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 14844 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-10-11 14:50:03.257      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 14844 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 153ms. Found 8 JPA repository interfaces.
-2021-10-11 14:50:04.975      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 14844 --- [    Test worker] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 6.4.4 by Redgate
-2021-10-11 14:50:05.272      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 14844 --- [    Test worker] o.f.c.internal.database.DatabaseFactory  : Database: jdbc:h2:mem:erest (H2 1.4)
-2021-10-11 14:50:05.381      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 14844 --- [    Test worker] o.f.core.internal.database.base.Schema   : Creating schema "erest" ...
-2021-10-11 14:50:05.397      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 14844 --- [    Test worker] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table "erest"."flyway_schema_history" ...
-2021-10-11 14:50:05.544      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 14844 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Current version of schema "erest": null
-2021-10-11 14:50:05.559      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 14844 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Migrating schema "erest" to version 1.0.1 - name
-2021-10-11 14:50:05.693      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 14844 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Successfully applied 1 migration to schema "erest" (execution time 00:00.167s)
-2021-10-11 14:50:06.273      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 14844 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-10-11 14:50:06.504      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 14844 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.22.Final
-2021-10-11 14:50:07.088      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 14844 --- [    Test worker] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2021-10-11 14:50:07.479      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 14844 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : erest - Starting...
-2021-10-11 14:50:07.494      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 14844 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : erest - Start completed.
-2021-10-11 14:50:07.526      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 14844 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2021-10-11 14:50:08.795      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 14844 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-10-11 14:50:08.811      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 14844 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-10-11 14:50:09.717      WARN [the-post-booking-app,,,]     [null] [null] [null]     [null] 14844 --- [    Test worker] o.s.w.c.s.GenericWebApplicationContext   : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'bookingController' defined in file [C:\Users\User\Desktop\Uni\Final Project\Implementation\the-post-booking-app\build\classes\java\main\the\postbooking\app\controller\BookingController.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'the.postbooking.app.hateoas.BookingRepresentationModelAssembler' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
-2021-10-11 14:50:09.717      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 14844 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2021-10-11 14:50:09.733      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 14844 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : erest - Shutdown initiated...
-2021-10-11 14:50:09.733      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 14844 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : erest - Shutdown completed.
-2021-10-11 14:50:09.748      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 14844 --- [    Test worker] ConditionEvaluationReportLoggingListener : 
+2021-10-13 15:07:56.312      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 3416 --- [kground-preinit] o.h.validator.internal.util.Version      : HV000001: Hibernate Validator 6.1.6.Final
+2021-10-13 15:07:56.329      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 3416 --- [           main] t.p.app.ThePostBookingAppApplication     : Starting ThePostBookingAppApplication on PC-0003 with PID 3416 (C:\Users\Alim Khowaja\Desktop\Alim Stuff\upwork\Post Booking App\the-post-booking-app\build\classes\java\main started by Alim Khowaja in C:\Users\Alim Khowaja\Desktop\Alim Stuff\upwork\Post Booking App\the-post-booking-app)
+2021-10-13 15:07:56.330      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 3416 --- [           main] t.p.app.ThePostBookingAppApplication     : No active profile set, falling back to default profiles: default
+2021-10-13 15:07:56.792      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 3416 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-10-13 15:07:56.858      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 3416 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 59ms. Found 8 JPA repository interfaces.
+2021-10-13 15:07:57.395      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 3416 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-10-13 15:07:57.401      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 3416 --- [           main] o.a.coyote.http11.Http11NioProtocol      : Initializing ProtocolHandler ["http-nio-8080"]
+2021-10-13 15:07:57.402      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 3416 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-10-13 15:07:57.402      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 3416 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2021-10-13 15:07:57.486      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 3416 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-10-13 15:07:57.486      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 3416 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1111 ms
+2021-10-13 15:07:57.519      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 3416 --- [           main] com.zaxxer.hikari.HikariDataSource       : erest - Starting...
+2021-10-13 15:07:57.641      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 3416 --- [           main] com.zaxxer.hikari.HikariDataSource       : erest - Start completed.
+2021-10-13 15:07:57.646      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 3416 --- [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:erest'
+2021-10-13 15:07:57.717      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 3416 --- [           main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 6.4.4 by Redgate
+2021-10-13 15:07:57.724      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 3416 --- [           main] o.f.c.internal.database.DatabaseFactory  : Database: jdbc:h2:mem:erest (H2 1.4)
+2021-10-13 15:07:57.772      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 3416 --- [           main] o.f.core.internal.database.base.Schema   : Creating schema "erest" ...
+2021-10-13 15:07:57.777      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 3416 --- [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table "erest"."flyway_schema_history" ...
+2021-10-13 15:07:57.827      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 3416 --- [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "erest": null
+2021-10-13 15:07:57.834      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 3416 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "erest" to version 1.0.1 - name
+2021-10-13 15:07:57.867      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 3416 --- [           main] o.f.core.internal.command.DbMigrate      : Successfully applied 1 migration to schema "erest" (execution time 00:00.046s)
+2021-10-13 15:07:57.924      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 3416 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-10-13 15:07:57.957      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 3416 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.22.Final
+2021-10-13 15:07:58.053      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 3416 --- [           main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2021-10-13 15:07:58.137      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 3416 --- [           main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-10-13 15:07:58.888      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 3416 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-10-13 15:07:58.894      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 3416 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-10-13 15:07:59.145      WARN [the-post-booking-app,,,]     [null] [null] [null]     [null] 3416 --- [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'bookingController' defined in file [C:\Users\Alim Khowaja\Desktop\Alim Stuff\upwork\Post Booking App\the-post-booking-app\build\classes\java\main\the\postbooking\app\controller\BookingController.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'the.postbooking.app.hateoas.BookingRepresentationModelAssembler' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2021-10-13 15:07:59.146      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 3416 --- [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-10-13 15:07:59.148      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 3416 --- [           main] com.zaxxer.hikari.HikariDataSource       : erest - Shutdown initiated...
+2021-10-13 15:07:59.151      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 3416 --- [           main] com.zaxxer.hikari.HikariDataSource       : erest - Shutdown completed.
+2021-10-13 15:07:59.152      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 3416 --- [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2021-10-13 15:07:59.160      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 3416 --- [           main] ConditionEvaluationReportLoggingListener : 
 
 Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2021-10-11 14:50:10.033     ERROR [the-post-booking-app,,,]     [null] [null] [null]     [null] 14844 --- [    Test worker] o.s.b.d.LoggingFailureAnalysisReporter   : 
+2021-10-13 15:07:59.242     ERROR [the-post-booking-app,,,]     [null] [null] [null]     [null] 3416 --- [           main] o.s.b.d.LoggingFailureAnalysisReporter   : 
 
 ***************************
 APPLICATION FAILED TO START
@@ -88,155 +98,44 @@ Action:
 
 Consider defining a bean of type 'the.postbooking.app.hateoas.BookingRepresentationModelAssembler' in your configuration.
 
-2021-10-11 14:50:10.049     ERROR [the-post-booking-app,,,]     [null] [null] [null]     [null] 14844 --- [    Test worker] o.s.test.context.TestContextManager      : Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@76f9644d] to prepare test instance [the.postbooking.app.ThePostBookingAppApplicationTests@22be1bba]
-java.lang.IllegalStateException: Failed to load ApplicationContext
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:132)
-	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:123)
-	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:190)
-	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:132)
-	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:244)
-	at org.springframework.test.context.junit.jupiter.SpringExtension.postProcessTestInstance(SpringExtension.java:98)
-	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$5(ClassBasedTestDescriptor.java:341)
-	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.executeAndMaskThrowable(ClassBasedTestDescriptor.java:346)
-	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$6(ClassBasedTestDescriptor.java:341)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
-	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:177)
-	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
-	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
-	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
-	at java.base/java.util.stream.StreamSpliterators$WrappingSpliterator.forEachRemaining(StreamSpliterators.java:312)
-	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:735)
-	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:734)
-	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:658)
-	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeTestInstancePostProcessors(ClassBasedTestDescriptor.java:340)
-	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateAndPostProcessTestInstance(ClassBasedTestDescriptor.java:263)
-	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$2(ClassBasedTestDescriptor.java:256)
-	at java.base/java.util.Optional.orElseGet(Optional.java:362)
-	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$3(ClassBasedTestDescriptor.java:255)
-	at org.junit.jupiter.engine.execution.TestInstancesProvider.getTestInstances(TestInstancesProvider.java:29)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$prepare$0(TestMethodTestDescriptor.java:108)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:107)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:71)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$prepare$1(NodeTestTask.java:107)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.prepare(NodeTestTask.java:107)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:75)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32)
-	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
-	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:108)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:96)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:75)
-	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:99)
-	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:79)
-	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:75)
-	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:61)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
-	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
-	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
-	at com.sun.proxy.$Proxy2.stop(Unknown Source)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.stop(TestWorker.java:135)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
-	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:182)
-	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:164)
-	at org.gradle.internal.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:414)
-	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
-	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:48)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
-	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:56)
-	at java.base/java.lang.Thread.run(Thread.java:832)
-Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'bookingController' defined in file [C:\Users\User\Desktop\Uni\Final Project\Implementation\the-post-booking-app\build\classes\java\main\the\postbooking\app\controller\BookingController.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'the.postbooking.app.hateoas.BookingRepresentationModelAssembler' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
-	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:797)
-	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:227)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1356)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1203)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:556)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:897)
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:879)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:551)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:405)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
-	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:120)
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99)
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124)
-	... 90 common frames omitted
-Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'the.postbooking.app.hateoas.BookingRepresentationModelAssembler' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1717)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1273)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1227)
-	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:884)
-	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:788)
-	... 109 common frames omitted
-2021-10-11 15:09:15.075      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 11584 --- [    Test worker] t.p.a.ThePostBookingAppApplicationTests  : Starting ThePostBookingAppApplicationTests on LAPTOP-FILOA8TL with PID 11584 (started by User in C:\Users\User\Desktop\Uni\Final Project\Implementation\the-post-booking-app)
-2021-10-11 15:09:15.075      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 11584 --- [    Test worker] t.p.a.ThePostBookingAppApplicationTests  : No active profile set, falling back to default profiles: default
-2021-10-11 15:09:17.266      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 11584 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-10-11 15:09:17.531      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 11584 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 246ms. Found 8 JPA repository interfaces.
-2021-10-11 15:09:19.145      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 11584 --- [    Test worker] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 6.4.4 by Redgate
-2021-10-11 15:09:19.542      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 11584 --- [    Test worker] o.f.c.internal.database.DatabaseFactory  : Database: jdbc:h2:mem:erest (H2 1.4)
-2021-10-11 15:09:19.754      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 11584 --- [    Test worker] o.f.core.internal.database.base.Schema   : Creating schema "erest" ...
-2021-10-11 15:09:19.785      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 11584 --- [    Test worker] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table "erest"."flyway_schema_history" ...
-2021-10-11 15:09:19.936      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 11584 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Current version of schema "erest": null
-2021-10-11 15:09:19.983      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 11584 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Migrating schema "erest" to version 1.0.1 - name
-2021-10-11 15:09:20.092      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 11584 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Successfully applied 1 migration to schema "erest" (execution time 00:00.176s)
-2021-10-11 15:09:20.514      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 11584 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-10-11 15:09:20.752      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 11584 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.22.Final
-2021-10-11 15:09:21.286      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 11584 --- [    Test worker] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2021-10-11 15:09:21.598      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 11584 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : erest - Starting...
-2021-10-11 15:09:21.630      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 11584 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : erest - Start completed.
-2021-10-11 15:09:21.661      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 11584 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2021-10-11 15:09:23.574      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 11584 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-10-11 15:09:23.590      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 11584 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-10-11 15:09:24.342      WARN [the-post-booking-app,,,]     [null] [null] [null]     [null] 11584 --- [    Test worker] o.s.w.c.s.GenericWebApplicationContext   : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'bookingController' defined in file [C:\Users\User\Desktop\Uni\Final Project\Implementation\the-post-booking-app\build\classes\java\main\the\postbooking\app\controller\BookingController.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'the.postbooking.app.hateoas.BookingRepresentationModelAssembler' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
-2021-10-11 15:09:24.342      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 11584 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2021-10-11 15:09:24.358      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 11584 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : erest - Shutdown initiated...
-2021-10-11 15:09:24.374      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 11584 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : erest - Shutdown completed.
-2021-10-11 15:09:24.389      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 11584 --- [    Test worker] ConditionEvaluationReportLoggingListener : 
+2021-10-13 15:10:27.866      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 7596 --- [kground-preinit] o.h.validator.internal.util.Version      : HV000001: Hibernate Validator 6.1.6.Final
+2021-10-13 15:10:27.889      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 7596 --- [           main] t.p.app.ThePostBookingAppApplication     : Starting ThePostBookingAppApplication on PC-0003 with PID 7596 (C:\Users\Alim Khowaja\Desktop\Alim Stuff\upwork\Post Booking App\the-post-booking-app\build\classes\java\main started by Alim Khowaja in C:\Users\Alim Khowaja\Desktop\Alim Stuff\upwork\Post Booking App\the-post-booking-app)
+2021-10-13 15:10:27.889      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 7596 --- [           main] t.p.app.ThePostBookingAppApplication     : No active profile set, falling back to default profiles: default
+2021-10-13 15:10:28.707      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 7596 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2021-10-13 15:10:28.809      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 7596 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 94ms. Found 8 JPA repository interfaces.
+2021-10-13 15:10:29.274      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 7596 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-10-13 15:10:29.281      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 7596 --- [           main] o.a.coyote.http11.Http11NioProtocol      : Initializing ProtocolHandler ["http-nio-8080"]
+2021-10-13 15:10:29.282      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 7596 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-10-13 15:10:29.282      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 7596 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2021-10-13 15:10:29.374      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 7596 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-10-13 15:10:29.374      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 7596 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1444 ms
+2021-10-13 15:10:29.411      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 7596 --- [           main] com.zaxxer.hikari.HikariDataSource       : erest - Starting...
+2021-10-13 15:10:29.554      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 7596 --- [           main] com.zaxxer.hikari.HikariDataSource       : erest - Start completed.
+2021-10-13 15:10:29.559      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 7596 --- [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:erest'
+2021-10-13 15:10:29.643      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 7596 --- [           main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 6.4.4 by Redgate
+2021-10-13 15:10:29.650      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 7596 --- [           main] o.f.c.internal.database.DatabaseFactory  : Database: jdbc:h2:mem:erest (H2 1.4)
+2021-10-13 15:10:29.698      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 7596 --- [           main] o.f.core.internal.database.base.Schema   : Creating schema "erest" ...
+2021-10-13 15:10:29.704      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 7596 --- [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table "erest"."flyway_schema_history" ...
+2021-10-13 15:10:29.750      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 7596 --- [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "erest": null
+2021-10-13 15:10:29.758      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 7596 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "erest" to version 1.0.1 - name
+2021-10-13 15:10:29.795      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 7596 --- [           main] o.f.core.internal.command.DbMigrate      : Successfully applied 1 migration to schema "erest" (execution time 00:00.051s)
+2021-10-13 15:10:29.840      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 7596 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-10-13 15:10:29.880      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 7596 --- [         task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-10-13 15:10:29.900      WARN [the-post-booking-app,,,]     [null] [null] [null]     [null] 7596 --- [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'bookingController': Unsatisfied dependency expressed through field 'assembler'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'bookingRepresentationModelAssembler' defined in file [C:\Users\Alim Khowaja\Desktop\Alim Stuff\upwork\Post Booking App\the-post-booking-app\build\classes\java\main\the\postbooking\app\hateoas\BookingRepresentationModelAssembler.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'java.lang.Class<?>' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2021-10-13 15:10:29.900      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 7596 --- [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-10-13 15:10:29.926      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 7596 --- [         task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.22.Final
+2021-10-13 15:10:30.061      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 7596 --- [         task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2021-10-13 15:10:30.170      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 7596 --- [         task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-10-13 15:10:30.991      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 7596 --- [         task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-10-13 15:10:30.998      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 7596 --- [         task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-10-13 15:10:31.002      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 7596 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-10-13 15:10:31.003      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 7596 --- [           main] com.zaxxer.hikari.HikariDataSource       : erest - Shutdown initiated...
+2021-10-13 15:10:31.004      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 7596 --- [           main] com.zaxxer.hikari.HikariDataSource       : erest - Shutdown completed.
+2021-10-13 15:10:31.005      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 7596 --- [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2021-10-13 15:10:31.014      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 7596 --- [           main] ConditionEvaluationReportLoggingListener : 
 
 Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2021-10-11 15:09:24.783     ERROR [the-post-booking-app,,,]     [null] [null] [null]     [null] 11584 --- [    Test worker] o.s.b.d.LoggingFailureAnalysisReporter   : 
+2021-10-13 15:10:31.100     ERROR [the-post-booking-app,,,]     [null] [null] [null]     [null] 7596 --- [           main] o.s.b.d.LoggingFailureAnalysisReporter   : 
 
 ***************************
 APPLICATION FAILED TO START
@@ -244,170 +143,54 @@ APPLICATION FAILED TO START
 
 Description:
 
-Parameter 1 of constructor in the.postbooking.app.controller.BookingController required a bean of type 'the.postbooking.app.hateoas.BookingRepresentationModelAssembler' that could not be found.
+Parameter 0 of constructor in the.postbooking.app.hateoas.BookingRepresentationModelAssembler required a bean of type 'java.lang.Class' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
 
 
 Action:
 
-Consider defining a bean of type 'the.postbooking.app.hateoas.BookingRepresentationModelAssembler' in your configuration.
+Consider defining a bean of type 'java.lang.Class' in your configuration.
 
-2021-10-11 15:09:24.798     ERROR [the-post-booking-app,,,]     [null] [null] [null]     [null] 11584 --- [    Test worker] o.s.test.context.TestContextManager      : Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@76f9644d] to prepare test instance [the.postbooking.app.ThePostBookingAppApplicationTests@7a4dd88]
-java.lang.IllegalStateException: Failed to load ApplicationContext
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:132)
-	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:123)
-	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:190)
-	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:132)
-	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:244)
-	at org.springframework.test.context.junit.jupiter.SpringExtension.postProcessTestInstance(SpringExtension.java:98)
-	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$5(ClassBasedTestDescriptor.java:341)
-	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.executeAndMaskThrowable(ClassBasedTestDescriptor.java:346)
-	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$6(ClassBasedTestDescriptor.java:341)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
-	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:177)
-	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
-	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
-	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
-	at java.base/java.util.stream.StreamSpliterators$WrappingSpliterator.forEachRemaining(StreamSpliterators.java:312)
-	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:735)
-	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:734)
-	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:658)
-	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeTestInstancePostProcessors(ClassBasedTestDescriptor.java:340)
-	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateAndPostProcessTestInstance(ClassBasedTestDescriptor.java:263)
-	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$2(ClassBasedTestDescriptor.java:256)
-	at java.base/java.util.Optional.orElseGet(Optional.java:362)
-	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$3(ClassBasedTestDescriptor.java:255)
-	at org.junit.jupiter.engine.execution.TestInstancesProvider.getTestInstances(TestInstancesProvider.java:29)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$prepare$0(TestMethodTestDescriptor.java:108)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:107)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:71)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$prepare$1(NodeTestTask.java:107)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.prepare(NodeTestTask.java:107)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:75)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32)
-	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
-	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:108)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:96)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:75)
-	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:99)
-	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:79)
-	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:75)
-	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:61)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
-	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
-	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
-	at com.sun.proxy.$Proxy2.stop(Unknown Source)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.stop(TestWorker.java:135)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
-	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:182)
-	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:164)
-	at org.gradle.internal.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:414)
-	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
-	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:48)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
-	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:56)
-	at java.base/java.lang.Thread.run(Thread.java:832)
-Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'bookingController' defined in file [C:\Users\User\Desktop\Uni\Final Project\Implementation\the-post-booking-app\build\classes\java\main\the\postbooking\app\controller\BookingController.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'the.postbooking.app.hateoas.BookingRepresentationModelAssembler' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
-	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:797)
-	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:227)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1356)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1203)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:556)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:897)
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:879)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:551)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:405)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
-	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:120)
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99)
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124)
-	... 90 common frames omitted
-Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'the.postbooking.app.hateoas.BookingRepresentationModelAssembler' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1717)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1273)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1227)
-	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:884)
-	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:788)
-	... 109 common frames omitted
-2021-10-11 15:27:20.508      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 11252 --- [           main] t.p.app.ThePostBookingAppApplication     : Starting ThePostBookingAppApplication on LAPTOP-FILOA8TL with PID 11252 (C:\Users\User\Desktop\Uni\Final Project\Implementation\the-post-booking-app\build\classes\java\main started by User in C:\Users\User\Desktop\Uni\Final Project\Implementation\the-post-booking-app)
-2021-10-11 15:27:20.524      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 11252 --- [           main] t.p.app.ThePostBookingAppApplication     : No active profile set, falling back to default profiles: default
-2021-10-11 15:27:21.811      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 11252 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-10-11 15:27:21.999      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 11252 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 170ms. Found 8 JPA repository interfaces.
-2021-10-11 15:27:23.565      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 11252 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2021-10-11 15:27:23.581      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 11252 --- [           main] o.a.coyote.http11.Http11NioProtocol      : Initializing ProtocolHandler ["http-nio-8080"]
-2021-10-11 15:27:23.581      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 11252 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-10-11 15:27:23.581      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 11252 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
-2021-10-11 15:27:23.799      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 11252 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2021-10-11 15:27:23.799      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 11252 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3126 ms
-2021-10-11 15:27:23.971      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 11252 --- [           main] com.zaxxer.hikari.HikariDataSource       : erest - Starting...
-2021-10-11 15:27:24.471      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 11252 --- [           main] com.zaxxer.hikari.HikariDataSource       : erest - Start completed.
-2021-10-11 15:27:24.487      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 11252 --- [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:erest'
-2021-10-11 15:27:24.768      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 11252 --- [           main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 6.4.4 by Redgate
-2021-10-11 15:27:24.799      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 11252 --- [           main] o.f.c.internal.database.DatabaseFactory  : Database: jdbc:h2:mem:erest (H2 1.4)
-2021-10-11 15:27:24.893      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 11252 --- [           main] o.f.core.internal.database.base.Schema   : Creating schema "erest" ...
-2021-10-11 15:27:24.909      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 11252 --- [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table "erest"."flyway_schema_history" ...
-2021-10-11 15:27:25.018      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 11252 --- [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "erest": null
-2021-10-11 15:27:25.034      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 11252 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "erest" to version 1.0.1 - name
-2021-10-11 15:27:25.128      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 11252 --- [           main] o.f.core.internal.command.DbMigrate      : Successfully applied 1 migration to schema "erest" (execution time 00:00.124s)
-2021-10-11 15:27:25.428      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 11252 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-10-11 15:27:25.553      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 11252 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.22.Final
-2021-10-11 15:27:25.865      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 11252 --- [           main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2021-10-11 15:27:26.115      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 11252 --- [           main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2021-10-11 15:27:27.482      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 11252 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-10-11 15:27:27.497      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 11252 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-10-11 15:27:28.154      WARN [the-post-booking-app,,,]     [null] [null] [null]     [null] 11252 --- [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'bookingController' defined in file [C:\Users\User\Desktop\Uni\Final Project\Implementation\the-post-booking-app\build\classes\java\main\the\postbooking\app\controller\BookingController.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'the.postbooking.app.hateoas.BookingRepresentationModelAssembler' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
-2021-10-11 15:27:28.154      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 11252 --- [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2021-10-11 15:27:28.169      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 11252 --- [           main] com.zaxxer.hikari.HikariDataSource       : erest - Shutdown initiated...
-2021-10-11 15:27:28.169      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 11252 --- [           main] com.zaxxer.hikari.HikariDataSource       : erest - Shutdown completed.
-2021-10-11 15:27:28.169      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 11252 --- [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2021-10-11 15:27:28.185      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 11252 --- [           main] ConditionEvaluationReportLoggingListener : 
+2021-10-13 15:11:54.104      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 18608 --- [kground-preinit] o.h.validator.internal.util.Version      : HV000001: Hibernate Validator 6.1.6.Final
+2021-10-13 15:11:54.124      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 18608 --- [           main] t.p.app.ThePostBookingAppApplication     : Starting ThePostBookingAppApplication on PC-0003 with PID 18608 (C:\Users\Alim Khowaja\Desktop\Alim Stuff\upwork\Post Booking App\the-post-booking-app\build\classes\java\main started by Alim Khowaja in C:\Users\Alim Khowaja\Desktop\Alim Stuff\upwork\Post Booking App\the-post-booking-app)
+2021-10-13 15:11:54.125      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 18608 --- [           main] t.p.app.ThePostBookingAppApplication     : No active profile set, falling back to default profiles: default
+2021-10-13 15:11:54.778      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 18608 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2021-10-13 15:11:54.868      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 18608 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 84ms. Found 8 JPA repository interfaces.
+2021-10-13 15:11:55.291      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 18608 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-10-13 15:11:55.298      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 18608 --- [           main] o.a.coyote.http11.Http11NioProtocol      : Initializing ProtocolHandler ["http-nio-8080"]
+2021-10-13 15:11:55.298      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 18608 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-10-13 15:11:55.299      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 18608 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2021-10-13 15:11:55.382      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 18608 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-10-13 15:11:55.382      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 18608 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1224 ms
+2021-10-13 15:11:55.418      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 18608 --- [           main] com.zaxxer.hikari.HikariDataSource       : erest - Starting...
+2021-10-13 15:11:55.548      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 18608 --- [           main] com.zaxxer.hikari.HikariDataSource       : erest - Start completed.
+2021-10-13 15:11:55.554      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 18608 --- [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:erest'
+2021-10-13 15:11:55.633      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 18608 --- [           main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 6.4.4 by Redgate
+2021-10-13 15:11:55.639      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 18608 --- [           main] o.f.c.internal.database.DatabaseFactory  : Database: jdbc:h2:mem:erest (H2 1.4)
+2021-10-13 15:11:55.689      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 18608 --- [           main] o.f.core.internal.database.base.Schema   : Creating schema "erest" ...
+2021-10-13 15:11:55.695      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 18608 --- [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table "erest"."flyway_schema_history" ...
+2021-10-13 15:11:55.743      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 18608 --- [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "erest": null
+2021-10-13 15:11:55.751      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 18608 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "erest" to version 1.0.1 - name
+2021-10-13 15:11:55.787      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 18608 --- [           main] o.f.core.internal.command.DbMigrate      : Successfully applied 1 migration to schema "erest" (execution time 00:00.049s)
+2021-10-13 15:11:55.826      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 18608 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-10-13 15:11:55.863      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 18608 --- [         task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-10-13 15:11:55.881      WARN [the-post-booking-app,,,]     [null] [null] [null]     [null] 18608 --- [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'bookingController': Unsatisfied dependency expressed through field 'assembler'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'bookingRepresentationModelAssembler' defined in file [C:\Users\Alim Khowaja\Desktop\Alim Stuff\upwork\Post Booking App\the-post-booking-app\build\classes\java\main\the\postbooking\app\hateoas\BookingRepresentationModelAssembler.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'java.lang.Class<the.postbooking.app.controller.BookingController>' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2021-10-13 15:11:55.881      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 18608 --- [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-10-13 15:11:55.915      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 18608 --- [         task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.22.Final
+2021-10-13 15:11:56.055      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 18608 --- [         task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2021-10-13 15:11:56.165      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 18608 --- [         task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-10-13 15:11:56.977      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 18608 --- [         task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-10-13 15:11:56.985      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 18608 --- [         task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-10-13 15:11:56.988      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 18608 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-10-13 15:11:56.988      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 18608 --- [           main] com.zaxxer.hikari.HikariDataSource       : erest - Shutdown initiated...
+2021-10-13 15:11:56.989      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 18608 --- [           main] com.zaxxer.hikari.HikariDataSource       : erest - Shutdown completed.
+2021-10-13 15:11:56.992      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 18608 --- [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2021-10-13 15:11:57.001      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 18608 --- [           main] ConditionEvaluationReportLoggingListener : 
 
 Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2021-10-11 15:27:28.497     ERROR [the-post-booking-app,,,]     [null] [null] [null]     [null] 11252 --- [           main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+2021-10-13 15:11:57.082     ERROR [the-post-booking-app,,,]     [null] [null] [null]     [null] 18608 --- [           main] o.s.b.d.LoggingFailureAnalysisReporter   : 
 
 ***************************
 APPLICATION FAILED TO START
@@ -415,10 +198,456 @@ APPLICATION FAILED TO START
 
 Description:
 
-Parameter 1 of constructor in the.postbooking.app.controller.BookingController required a bean of type 'the.postbooking.app.hateoas.BookingRepresentationModelAssembler' that could not be found.
+Parameter 0 of constructor in the.postbooking.app.hateoas.BookingRepresentationModelAssembler required a bean of type 'java.lang.Class' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
 
 
 Action:
 
-Consider defining a bean of type 'the.postbooking.app.hateoas.BookingRepresentationModelAssembler' in your configuration.
+Consider defining a bean of type 'java.lang.Class' in your configuration.
 
+2021-10-13 15:12:17.055      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 676 --- [kground-preinit] o.h.validator.internal.util.Version      : HV000001: Hibernate Validator 6.1.6.Final
+2021-10-13 15:12:17.085      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 676 --- [           main] t.p.app.ThePostBookingAppApplication     : Starting ThePostBookingAppApplication on PC-0003 with PID 676 (C:\Users\Alim Khowaja\Desktop\Alim Stuff\upwork\Post Booking App\the-post-booking-app\build\classes\java\main started by Alim Khowaja in C:\Users\Alim Khowaja\Desktop\Alim Stuff\upwork\Post Booking App\the-post-booking-app)
+2021-10-13 15:12:17.087      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 676 --- [           main] t.p.app.ThePostBookingAppApplication     : No active profile set, falling back to default profiles: default
+2021-10-13 15:12:17.969      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 676 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2021-10-13 15:12:18.085      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 676 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 107ms. Found 8 JPA repository interfaces.
+2021-10-13 15:12:18.598      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 676 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-10-13 15:12:18.605      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 676 --- [           main] o.a.coyote.http11.Http11NioProtocol      : Initializing ProtocolHandler ["http-nio-8080"]
+2021-10-13 15:12:18.606      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 676 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-10-13 15:12:18.606      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 676 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2021-10-13 15:12:18.707      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 676 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-10-13 15:12:18.707      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 676 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1550 ms
+2021-10-13 15:12:18.748      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 676 --- [           main] com.zaxxer.hikari.HikariDataSource       : erest - Starting...
+2021-10-13 15:12:18.978      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 676 --- [           main] com.zaxxer.hikari.HikariDataSource       : erest - Start completed.
+2021-10-13 15:12:18.984      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 676 --- [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:erest'
+2021-10-13 15:12:19.083      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 676 --- [           main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 6.4.4 by Redgate
+2021-10-13 15:12:19.092      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 676 --- [           main] o.f.c.internal.database.DatabaseFactory  : Database: jdbc:h2:mem:erest (H2 1.4)
+2021-10-13 15:12:19.150      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 676 --- [           main] o.f.core.internal.database.base.Schema   : Creating schema "erest" ...
+2021-10-13 15:12:19.157      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 676 --- [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table "erest"."flyway_schema_history" ...
+2021-10-13 15:12:19.220      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 676 --- [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "erest": null
+2021-10-13 15:12:19.229      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 676 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "erest" to version 1.0.1 - name
+2021-10-13 15:12:19.271      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 676 --- [           main] o.f.core.internal.command.DbMigrate      : Successfully applied 1 migration to schema "erest" (execution time 00:00.063s)
+2021-10-13 15:12:19.319      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 676 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-10-13 15:12:19.363      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 676 --- [         task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-10-13 15:12:19.381      WARN [the-post-booking-app,,,]     [null] [null] [null]     [null] 676 --- [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'bookingController': Unsatisfied dependency expressed through field 'assembler'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'bookingRepresentationModelAssembler' defined in file [C:\Users\Alim Khowaja\Desktop\Alim Stuff\upwork\Post Booking App\the-post-booking-app\build\classes\java\main\the\postbooking\app\hateoas\BookingRepresentationModelAssembler.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'java.lang.Class<the.postbooking.app.controller.BookingController>' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2021-10-13 15:12:19.381      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 676 --- [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-10-13 15:12:19.408      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 676 --- [         task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.22.Final
+2021-10-13 15:12:19.562      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 676 --- [         task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2021-10-13 15:12:19.676      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 676 --- [         task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-10-13 15:12:20.570      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 676 --- [         task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-10-13 15:12:20.578      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 676 --- [         task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-10-13 15:12:20.581      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 676 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-10-13 15:12:20.582      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 676 --- [           main] com.zaxxer.hikari.HikariDataSource       : erest - Shutdown initiated...
+2021-10-13 15:12:20.584      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 676 --- [           main] com.zaxxer.hikari.HikariDataSource       : erest - Shutdown completed.
+2021-10-13 15:12:20.585      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 676 --- [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2021-10-13 15:12:20.594      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 676 --- [           main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-10-13 15:12:20.688     ERROR [the-post-booking-app,,,]     [null] [null] [null]     [null] 676 --- [           main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in the.postbooking.app.hateoas.BookingRepresentationModelAssembler required a bean of type 'java.lang.Class' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'java.lang.Class' in your configuration.
+
+2021-10-13 15:15:07.484      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 1668 --- [kground-preinit] o.h.validator.internal.util.Version      : HV000001: Hibernate Validator 6.1.6.Final
+2021-10-13 15:15:07.504      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 1668 --- [           main] t.p.app.ThePostBookingAppApplication     : Starting ThePostBookingAppApplication on PC-0003 with PID 1668 (C:\Users\Alim Khowaja\Desktop\Alim Stuff\upwork\Post Booking App\the-post-booking-app\build\classes\java\main started by Alim Khowaja in C:\Users\Alim Khowaja\Desktop\Alim Stuff\upwork\Post Booking App\the-post-booking-app)
+2021-10-13 15:15:07.505      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 1668 --- [           main] t.p.app.ThePostBookingAppApplication     : No active profile set, falling back to default profiles: default
+2021-10-13 15:15:08.121      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 1668 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2021-10-13 15:15:08.207      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 1668 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 80ms. Found 8 JPA repository interfaces.
+2021-10-13 15:15:08.708      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 1668 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-10-13 15:15:08.714      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 1668 --- [           main] o.a.coyote.http11.Http11NioProtocol      : Initializing ProtocolHandler ["http-nio-8080"]
+2021-10-13 15:15:08.715      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 1668 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-10-13 15:15:08.715      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 1668 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2021-10-13 15:15:08.798      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 1668 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-10-13 15:15:08.798      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 1668 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1260 ms
+2021-10-13 15:15:08.833      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 1668 --- [           main] com.zaxxer.hikari.HikariDataSource       : erest - Starting...
+2021-10-13 15:15:08.961      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 1668 --- [           main] com.zaxxer.hikari.HikariDataSource       : erest - Start completed.
+2021-10-13 15:15:08.967      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 1668 --- [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:erest'
+2021-10-13 15:15:09.047      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 1668 --- [           main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 6.4.4 by Redgate
+2021-10-13 15:15:09.055      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 1668 --- [           main] o.f.c.internal.database.DatabaseFactory  : Database: jdbc:h2:mem:erest (H2 1.4)
+2021-10-13 15:15:09.103      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 1668 --- [           main] o.f.core.internal.database.base.Schema   : Creating schema "erest" ...
+2021-10-13 15:15:09.108      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 1668 --- [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table "erest"."flyway_schema_history" ...
+2021-10-13 15:15:09.152      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 1668 --- [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "erest": null
+2021-10-13 15:15:09.159      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 1668 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "erest" to version 1.0.1 - name
+2021-10-13 15:15:09.194      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 1668 --- [           main] o.f.core.internal.command.DbMigrate      : Successfully applied 1 migration to schema "erest" (execution time 00:00.047s)
+2021-10-13 15:15:09.232      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 1668 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-10-13 15:15:09.268      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 1668 --- [         task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-10-13 15:15:09.283      WARN [the-post-booking-app,,,]     [null] [null] [null]     [null] 1668 --- [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'bookingController' defined in file [C:\Users\Alim Khowaja\Desktop\Alim Stuff\upwork\Post Booking App\the-post-booking-app\build\classes\java\main\the\postbooking\app\controller\BookingController.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'bookingRepresentationModelAssembler' defined in file [C:\Users\Alim Khowaja\Desktop\Alim Stuff\upwork\Post Booking App\the-post-booking-app\build\classes\java\main\the\postbooking\app\hateoas\BookingRepresentationModelAssembler.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCurrentlyInCreationException: Error creating bean with name 'bookingController': Requested bean is currently in creation: Is there an unresolvable circular reference?
+2021-10-13 15:15:09.284      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 1668 --- [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-10-13 15:15:09.305      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 1668 --- [         task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.22.Final
+2021-10-13 15:15:09.409      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 1668 --- [         task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2021-10-13 15:15:09.496      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 1668 --- [         task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-10-13 15:15:10.229      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 1668 --- [         task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-10-13 15:15:10.236      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 1668 --- [         task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-10-13 15:15:10.239      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 1668 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-10-13 15:15:10.239      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 1668 --- [           main] com.zaxxer.hikari.HikariDataSource       : erest - Shutdown initiated...
+2021-10-13 15:15:10.241      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 1668 --- [           main] com.zaxxer.hikari.HikariDataSource       : erest - Shutdown completed.
+2021-10-13 15:15:10.243      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 1668 --- [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2021-10-13 15:15:10.252      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 1668 --- [           main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-10-13 15:15:10.255     ERROR [the-post-booking-app,,,]     [null] [null] [null]     [null] 1668 --- [           main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The dependencies of some of the beans in the application context form a cycle:
+
+┌─────┐
+|  bookingController defined in file [C:\Users\Alim Khowaja\Desktop\Alim Stuff\upwork\Post Booking App\the-post-booking-app\build\classes\java\main\the\postbooking\app\controller\BookingController.class]
+↑     ↓
+|  bookingRepresentationModelAssembler defined in file [C:\Users\Alim Khowaja\Desktop\Alim Stuff\upwork\Post Booking App\the-post-booking-app\build\classes\java\main\the\postbooking\app\hateoas\BookingRepresentationModelAssembler.class]
+└─────┘
+
+
+2021-10-13 15:18:52.455      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 5608 --- [kground-preinit] o.h.validator.internal.util.Version      : HV000001: Hibernate Validator 6.1.6.Final
+2021-10-13 15:18:52.486      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 5608 --- [           main] t.p.app.ThePostBookingAppApplication     : Starting ThePostBookingAppApplication on PC-0003 with PID 5608 (C:\Users\Alim Khowaja\Desktop\Alim Stuff\upwork\Post Booking App\the-post-booking-app\build\classes\java\main started by Alim Khowaja in C:\Users\Alim Khowaja\Desktop\Alim Stuff\upwork\Post Booking App\the-post-booking-app)
+2021-10-13 15:18:52.487      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 5608 --- [           main] t.p.app.ThePostBookingAppApplication     : No active profile set, falling back to default profiles: default
+2021-10-13 15:18:53.549      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 5608 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2021-10-13 15:18:53.717      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 5608 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 149ms. Found 8 JPA repository interfaces.
+2021-10-13 15:18:54.532      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 5608 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-10-13 15:18:54.549      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 5608 --- [           main] o.a.coyote.http11.Http11NioProtocol      : Initializing ProtocolHandler ["http-nio-8080"]
+2021-10-13 15:18:54.553      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 5608 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-10-13 15:18:54.554      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 5608 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2021-10-13 15:18:54.746      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 5608 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-10-13 15:18:54.746      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 5608 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2201 ms
+2021-10-13 15:18:54.822      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 5608 --- [           main] com.zaxxer.hikari.HikariDataSource       : erest - Starting...
+2021-10-13 15:18:55.211      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 5608 --- [           main] com.zaxxer.hikari.HikariDataSource       : erest - Start completed.
+2021-10-13 15:18:55.220      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 5608 --- [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:erest'
+2021-10-13 15:18:55.354      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 5608 --- [           main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 6.4.4 by Redgate
+2021-10-13 15:18:55.363      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 5608 --- [           main] o.f.c.internal.database.DatabaseFactory  : Database: jdbc:h2:mem:erest (H2 1.4)
+2021-10-13 15:18:55.455      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 5608 --- [           main] o.f.core.internal.database.base.Schema   : Creating schema "erest" ...
+2021-10-13 15:18:55.467      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 5608 --- [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table "erest"."flyway_schema_history" ...
+2021-10-13 15:18:55.548      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 5608 --- [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "erest": null
+2021-10-13 15:18:55.564      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 5608 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "erest" to version 1.0.1 - name
+2021-10-13 15:18:55.624      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 5608 --- [           main] o.f.core.internal.command.DbMigrate      : Successfully applied 1 migration to schema "erest" (execution time 00:00.084s)
+2021-10-13 15:18:55.685      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 5608 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-10-13 15:18:55.757      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 5608 --- [         task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-10-13 15:18:55.781      WARN [the-post-booking-app,,,]     [null] [null] [null]     [null] 5608 --- [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'bookingController' defined in file [C:\Users\Alim Khowaja\Desktop\Alim Stuff\upwork\Post Booking App\the-post-booking-app\build\classes\java\main\the\postbooking\app\controller\BookingController.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'bookingRepresentationModelAssembler' defined in file [C:\Users\Alim Khowaja\Desktop\Alim Stuff\upwork\Post Booking App\the-post-booking-app\build\classes\java\main\the\postbooking\app\hateoas\BookingRepresentationModelAssembler.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCurrentlyInCreationException: Error creating bean with name 'bookingController': Requested bean is currently in creation: Is there an unresolvable circular reference?
+2021-10-13 15:18:55.782      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 5608 --- [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-10-13 15:18:55.818      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 5608 --- [         task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.22.Final
+2021-10-13 15:18:56.000      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 5608 --- [         task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2021-10-13 15:18:56.212      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 5608 --- [         task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-10-13 15:18:57.720      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 5608 --- [         task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-10-13 15:18:57.733      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 5608 --- [         task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-10-13 15:18:57.740      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 5608 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-10-13 15:18:57.741      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 5608 --- [           main] com.zaxxer.hikari.HikariDataSource       : erest - Shutdown initiated...
+2021-10-13 15:18:57.744      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 5608 --- [           main] com.zaxxer.hikari.HikariDataSource       : erest - Shutdown completed.
+2021-10-13 15:18:57.747      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 5608 --- [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2021-10-13 15:18:57.767      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 5608 --- [           main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-10-13 15:18:57.778     ERROR [the-post-booking-app,,,]     [null] [null] [null]     [null] 5608 --- [           main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The dependencies of some of the beans in the application context form a cycle:
+
+┌─────┐
+|  bookingController defined in file [C:\Users\Alim Khowaja\Desktop\Alim Stuff\upwork\Post Booking App\the-post-booking-app\build\classes\java\main\the\postbooking\app\controller\BookingController.class]
+↑     ↓
+|  bookingRepresentationModelAssembler defined in file [C:\Users\Alim Khowaja\Desktop\Alim Stuff\upwork\Post Booking App\the-post-booking-app\build\classes\java\main\the\postbooking\app\hateoas\BookingRepresentationModelAssembler.class]
+└─────┘
+
+
+2021-10-13 15:19:20.950      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 10656 --- [kground-preinit] o.h.validator.internal.util.Version      : HV000001: Hibernate Validator 6.1.6.Final
+2021-10-13 15:19:21.005      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 10656 --- [           main] t.p.app.ThePostBookingAppApplication     : Starting ThePostBookingAppApplication on PC-0003 with PID 10656 (C:\Users\Alim Khowaja\Desktop\Alim Stuff\upwork\Post Booking App\the-post-booking-app\build\classes\java\main started by Alim Khowaja in C:\Users\Alim Khowaja\Desktop\Alim Stuff\upwork\Post Booking App\the-post-booking-app)
+2021-10-13 15:19:21.006      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 10656 --- [           main] t.p.app.ThePostBookingAppApplication     : No active profile set, falling back to default profiles: default
+2021-10-13 15:19:22.297      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 10656 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2021-10-13 15:19:22.505      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 10656 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 194ms. Found 8 JPA repository interfaces.
+2021-10-13 15:19:23.573      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 10656 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-10-13 15:19:23.590      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 10656 --- [           main] o.a.coyote.http11.Http11NioProtocol      : Initializing ProtocolHandler ["http-nio-8080"]
+2021-10-13 15:19:23.591      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 10656 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-10-13 15:19:23.591      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 10656 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2021-10-13 15:19:23.828      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 10656 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-10-13 15:19:23.828      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 10656 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2728 ms
+2021-10-13 15:19:23.914      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 10656 --- [           main] com.zaxxer.hikari.HikariDataSource       : erest - Starting...
+2021-10-13 15:19:24.278      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 10656 --- [           main] com.zaxxer.hikari.HikariDataSource       : erest - Start completed.
+2021-10-13 15:19:24.290      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 10656 --- [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:erest'
+2021-10-13 15:19:24.495      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 10656 --- [           main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 6.4.4 by Redgate
+2021-10-13 15:19:24.514      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 10656 --- [           main] o.f.c.internal.database.DatabaseFactory  : Database: jdbc:h2:mem:erest (H2 1.4)
+2021-10-13 15:19:24.623      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 10656 --- [           main] o.f.core.internal.database.base.Schema   : Creating schema "erest" ...
+2021-10-13 15:19:24.635      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 10656 --- [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table "erest"."flyway_schema_history" ...
+2021-10-13 15:19:24.737      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 10656 --- [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "erest": null
+2021-10-13 15:19:24.754      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 10656 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "erest" to version 1.0.1 - name
+2021-10-13 15:19:24.838      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 10656 --- [           main] o.f.core.internal.command.DbMigrate      : Successfully applied 1 migration to schema "erest" (execution time 00:00.115s)
+2021-10-13 15:19:24.934      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 10656 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-10-13 15:19:25.044      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 10656 --- [         task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-10-13 15:19:25.087      WARN [the-post-booking-app,,,]     [null] [null] [null]     [null] 10656 --- [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'bookingController' defined in file [C:\Users\Alim Khowaja\Desktop\Alim Stuff\upwork\Post Booking App\the-post-booking-app\build\classes\java\main\the\postbooking\app\controller\BookingController.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'bookingRepresentationModelAssembler' defined in file [C:\Users\Alim Khowaja\Desktop\Alim Stuff\upwork\Post Booking App\the-post-booking-app\build\classes\java\main\the\postbooking\app\hateoas\BookingRepresentationModelAssembler.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCurrentlyInCreationException: Error creating bean with name 'bookingController': Requested bean is currently in creation: Is there an unresolvable circular reference?
+2021-10-13 15:19:25.088      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 10656 --- [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-10-13 15:19:25.158      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 10656 --- [         task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.22.Final
+2021-10-13 15:19:25.411      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 10656 --- [         task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2021-10-13 15:19:25.621      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 10656 --- [         task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-10-13 15:19:27.282      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 10656 --- [         task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-10-13 15:19:27.303      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 10656 --- [         task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-10-13 15:19:27.314      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 10656 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-10-13 15:19:27.315      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 10656 --- [           main] com.zaxxer.hikari.HikariDataSource       : erest - Shutdown initiated...
+2021-10-13 15:19:27.322      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 10656 --- [           main] com.zaxxer.hikari.HikariDataSource       : erest - Shutdown completed.
+2021-10-13 15:19:27.326      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 10656 --- [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2021-10-13 15:19:27.346      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 10656 --- [           main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-10-13 15:19:27.357     ERROR [the-post-booking-app,,,]     [null] [null] [null]     [null] 10656 --- [           main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The dependencies of some of the beans in the application context form a cycle:
+
+┌─────┐
+|  bookingController defined in file [C:\Users\Alim Khowaja\Desktop\Alim Stuff\upwork\Post Booking App\the-post-booking-app\build\classes\java\main\the\postbooking\app\controller\BookingController.class]
+↑     ↓
+|  bookingRepresentationModelAssembler defined in file [C:\Users\Alim Khowaja\Desktop\Alim Stuff\upwork\Post Booking App\the-post-booking-app\build\classes\java\main\the\postbooking\app\hateoas\BookingRepresentationModelAssembler.class]
+└─────┘
+
+
+2021-10-13 15:19:35.965      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 15532 --- [kground-preinit] o.h.validator.internal.util.Version      : HV000001: Hibernate Validator 6.1.6.Final
+2021-10-13 15:19:36.016      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 15532 --- [           main] t.p.app.ThePostBookingAppApplication     : Starting ThePostBookingAppApplication on PC-0003 with PID 15532 (C:\Users\Alim Khowaja\Desktop\Alim Stuff\upwork\Post Booking App\the-post-booking-app\build\classes\java\main started by Alim Khowaja in C:\Users\Alim Khowaja\Desktop\Alim Stuff\upwork\Post Booking App\the-post-booking-app)
+2021-10-13 15:19:36.017      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 15532 --- [           main] t.p.app.ThePostBookingAppApplication     : No active profile set, falling back to default profiles: default
+2021-10-13 15:19:37.466      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 15532 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2021-10-13 15:19:37.735      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 15532 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 253ms. Found 8 JPA repository interfaces.
+2021-10-13 15:19:38.866      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 15532 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-10-13 15:19:38.887      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 15532 --- [           main] o.a.coyote.http11.Http11NioProtocol      : Initializing ProtocolHandler ["http-nio-8080"]
+2021-10-13 15:19:38.889      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 15532 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-10-13 15:19:38.891      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 15532 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2021-10-13 15:19:39.171      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 15532 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-10-13 15:19:39.171      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 15532 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3042 ms
+2021-10-13 15:19:39.272      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 15532 --- [           main] com.zaxxer.hikari.HikariDataSource       : erest - Starting...
+2021-10-13 15:19:39.596      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 15532 --- [           main] com.zaxxer.hikari.HikariDataSource       : erest - Start completed.
+2021-10-13 15:19:39.608      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 15532 --- [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:erest'
+2021-10-13 15:19:39.799      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 15532 --- [           main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 6.4.4 by Redgate
+2021-10-13 15:19:39.817      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 15532 --- [           main] o.f.c.internal.database.DatabaseFactory  : Database: jdbc:h2:mem:erest (H2 1.4)
+2021-10-13 15:19:39.925      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 15532 --- [           main] o.f.core.internal.database.base.Schema   : Creating schema "erest" ...
+2021-10-13 15:19:39.937      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 15532 --- [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table "erest"."flyway_schema_history" ...
+2021-10-13 15:19:40.061      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 15532 --- [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "erest": null
+2021-10-13 15:19:40.077      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 15532 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "erest" to version 1.0.1 - name
+2021-10-13 15:19:40.147      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 15532 --- [           main] o.f.core.internal.command.DbMigrate      : Successfully applied 1 migration to schema "erest" (execution time 00:00.103s)
+2021-10-13 15:19:40.220      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 15532 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-10-13 15:19:40.294      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 15532 --- [         task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-10-13 15:19:40.325      WARN [the-post-booking-app,,,]     [null] [null] [null]     [null] 15532 --- [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'bookingController' defined in file [C:\Users\Alim Khowaja\Desktop\Alim Stuff\upwork\Post Booking App\the-post-booking-app\build\classes\java\main\the\postbooking\app\controller\BookingController.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'bookingRepresentationModelAssembler' defined in file [C:\Users\Alim Khowaja\Desktop\Alim Stuff\upwork\Post Booking App\the-post-booking-app\build\classes\java\main\the\postbooking\app\hateoas\BookingRepresentationModelAssembler.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCurrentlyInCreationException: Error creating bean with name 'bookingController': Requested bean is currently in creation: Is there an unresolvable circular reference?
+2021-10-13 15:19:40.327      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 15532 --- [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-10-13 15:19:40.405      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 15532 --- [         task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.22.Final
+2021-10-13 15:19:40.675      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 15532 --- [         task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2021-10-13 15:19:40.906      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 15532 --- [         task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-10-13 15:19:42.521      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 15532 --- [         task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-10-13 15:19:42.538      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 15532 --- [         task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-10-13 15:19:42.549      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 15532 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-10-13 15:19:42.550      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 15532 --- [           main] com.zaxxer.hikari.HikariDataSource       : erest - Shutdown initiated...
+2021-10-13 15:19:42.559      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 15532 --- [           main] com.zaxxer.hikari.HikariDataSource       : erest - Shutdown completed.
+2021-10-13 15:19:42.562      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 15532 --- [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2021-10-13 15:19:42.583      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 15532 --- [           main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-10-13 15:19:42.596     ERROR [the-post-booking-app,,,]     [null] [null] [null]     [null] 15532 --- [           main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The dependencies of some of the beans in the application context form a cycle:
+
+┌─────┐
+|  bookingController defined in file [C:\Users\Alim Khowaja\Desktop\Alim Stuff\upwork\Post Booking App\the-post-booking-app\build\classes\java\main\the\postbooking\app\controller\BookingController.class]
+↑     ↓
+|  bookingRepresentationModelAssembler defined in file [C:\Users\Alim Khowaja\Desktop\Alim Stuff\upwork\Post Booking App\the-post-booking-app\build\classes\java\main\the\postbooking\app\hateoas\BookingRepresentationModelAssembler.class]
+└─────┘
+
+
+2021-10-13 15:21:10.716      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 3236 --- [kground-preinit] o.h.validator.internal.util.Version      : HV000001: Hibernate Validator 6.1.6.Final
+2021-10-13 15:21:10.748      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 3236 --- [           main] t.p.app.ThePostBookingAppApplication     : Starting ThePostBookingAppApplication on PC-0003 with PID 3236 (C:\Users\Alim Khowaja\Desktop\Alim Stuff\upwork\Post Booking App\the-post-booking-app\build\classes\java\main started by Alim Khowaja in C:\Users\Alim Khowaja\Desktop\Alim Stuff\upwork\Post Booking App\the-post-booking-app)
+2021-10-13 15:21:10.749      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 3236 --- [           main] t.p.app.ThePostBookingAppApplication     : No active profile set, falling back to default profiles: default
+2021-10-13 15:21:11.787      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 3236 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2021-10-13 15:21:11.973      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 3236 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 176ms. Found 8 JPA repository interfaces.
+2021-10-13 15:21:12.712      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 3236 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-10-13 15:21:12.724      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 3236 --- [           main] o.a.coyote.http11.Http11NioProtocol      : Initializing ProtocolHandler ["http-nio-8080"]
+2021-10-13 15:21:12.724      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 3236 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-10-13 15:21:12.725      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 3236 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2021-10-13 15:21:12.885      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 3236 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-10-13 15:21:12.894      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 3236 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2084 ms
+2021-10-13 15:21:12.950      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 3236 --- [           main] com.zaxxer.hikari.HikariDataSource       : erest - Starting...
+2021-10-13 15:21:13.219      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 3236 --- [           main] com.zaxxer.hikari.HikariDataSource       : erest - Start completed.
+2021-10-13 15:21:13.232      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 3236 --- [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:erest'
+2021-10-13 15:21:13.371      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 3236 --- [           main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 6.4.4 by Redgate
+2021-10-13 15:21:13.378      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 3236 --- [           main] o.f.c.internal.database.DatabaseFactory  : Database: jdbc:h2:mem:erest (H2 1.4)
+2021-10-13 15:21:13.463      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 3236 --- [           main] o.f.core.internal.database.base.Schema   : Creating schema "erest" ...
+2021-10-13 15:21:13.476      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 3236 --- [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table "erest"."flyway_schema_history" ...
+2021-10-13 15:21:13.556      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 3236 --- [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "erest": null
+2021-10-13 15:21:13.573      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 3236 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "erest" to version 1.0.1 - name
+2021-10-13 15:21:13.631      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 3236 --- [           main] o.f.core.internal.command.DbMigrate      : Successfully applied 1 migration to schema "erest" (execution time 00:00.083s)
+2021-10-13 15:21:13.689      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 3236 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-10-13 15:21:13.746      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 3236 --- [         task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-10-13 15:21:13.799      WARN [the-post-booking-app,,,]     [null] [null] [null]     [null] 3236 --- [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'menuController' defined in file [C:\Users\Alim Khowaja\Desktop\Alim Stuff\upwork\Post Booking App\the-post-booking-app\build\classes\java\main\the\postbooking\app\controller\MenuController.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'menuRepresentationModelAssembler' defined in file [C:\Users\Alim Khowaja\Desktop\Alim Stuff\upwork\Post Booking App\the-post-booking-app\build\classes\java\main\the\postbooking\app\hateoas\MenuRepresentationModelAssembler.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'java.lang.Class<?>' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2021-10-13 15:21:13.799      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 3236 --- [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-10-13 15:21:13.812      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 3236 --- [         task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.22.Final
+2021-10-13 15:21:13.979      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 3236 --- [         task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2021-10-13 15:21:14.129      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 3236 --- [         task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-10-13 15:21:15.431      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 3236 --- [         task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-10-13 15:21:15.433      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 3236 --- [         task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-10-13 15:21:15.448      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 3236 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-10-13 15:21:15.449      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 3236 --- [           main] com.zaxxer.hikari.HikariDataSource       : erest - Shutdown initiated...
+2021-10-13 15:21:15.451      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 3236 --- [           main] com.zaxxer.hikari.HikariDataSource       : erest - Shutdown completed.
+2021-10-13 15:21:15.454      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 3236 --- [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2021-10-13 15:21:15.468      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 3236 --- [           main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-10-13 15:21:15.619     ERROR [the-post-booking-app,,,]     [null] [null] [null]     [null] 3236 --- [           main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in the.postbooking.app.hateoas.MenuRepresentationModelAssembler required a bean of type 'java.lang.Class' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'java.lang.Class' in your configuration.
+
+2021-10-13 15:25:12.963      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 20804 --- [kground-preinit] o.h.validator.internal.util.Version      : HV000001: Hibernate Validator 6.1.6.Final
+2021-10-13 15:25:13.004      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 20804 --- [           main] t.p.app.ThePostBookingAppApplication     : Starting ThePostBookingAppApplication on PC-0003 with PID 20804 (C:\Users\Alim Khowaja\Desktop\Alim Stuff\upwork\Post Booking App\the-post-booking-app\build\classes\java\main started by Alim Khowaja in C:\Users\Alim Khowaja\Desktop\Alim Stuff\upwork\Post Booking App\the-post-booking-app)
+2021-10-13 15:25:13.004      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 20804 --- [           main] t.p.app.ThePostBookingAppApplication     : No active profile set, falling back to default profiles: default
+2021-10-13 15:25:14.098      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 20804 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2021-10-13 15:25:14.258      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 20804 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 152ms. Found 8 JPA repository interfaces.
+2021-10-13 15:25:14.977      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 20804 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-10-13 15:25:14.991      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 20804 --- [           main] o.a.coyote.http11.Http11NioProtocol      : Initializing ProtocolHandler ["http-nio-8080"]
+2021-10-13 15:25:14.995      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 20804 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-10-13 15:25:14.996      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 20804 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2021-10-13 15:25:15.161      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 20804 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-10-13 15:25:15.162      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 20804 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2084 ms
+2021-10-13 15:25:15.217      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 20804 --- [           main] com.zaxxer.hikari.HikariDataSource       : erest - Starting...
+2021-10-13 15:25:15.425      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 20804 --- [           main] com.zaxxer.hikari.HikariDataSource       : erest - Start completed.
+2021-10-13 15:25:15.432      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 20804 --- [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:erest'
+2021-10-13 15:25:15.590      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 20804 --- [           main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 6.4.4 by Redgate
+2021-10-13 15:25:15.604      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 20804 --- [           main] o.f.c.internal.database.DatabaseFactory  : Database: jdbc:h2:mem:erest (H2 1.4)
+2021-10-13 15:25:15.694      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 20804 --- [           main] o.f.core.internal.database.base.Schema   : Creating schema "erest" ...
+2021-10-13 15:25:15.712      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 20804 --- [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table "erest"."flyway_schema_history" ...
+2021-10-13 15:25:15.799      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 20804 --- [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "erest": null
+2021-10-13 15:25:15.817      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 20804 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "erest" to version 1.0.1 - name
+2021-10-13 15:25:15.883      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 20804 --- [           main] o.f.core.internal.command.DbMigrate      : Successfully applied 1 migration to schema "erest" (execution time 00:00.094s)
+2021-10-13 15:25:15.959      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 20804 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-10-13 15:25:16.057      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 20804 --- [         task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-10-13 15:25:16.139      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 20804 --- [         task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.22.Final
+2021-10-13 15:25:16.261      WARN [the-post-booking-app,,,]     [null] [null] [null]     [null] 20804 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-10-13 15:25:16.415      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 20804 --- [         task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2021-10-13 15:25:16.610      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 20804 --- [         task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-10-13 15:25:16.998      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 20804 --- [           main] o.a.coyote.http11.Http11NioProtocol      : Starting ProtocolHandler ["http-nio-8080"]
+2021-10-13 15:25:17.025      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 20804 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-10-13 15:25:17.026      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 20804 --- [           main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2021-10-13 15:25:18.060      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 20804 --- [         task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-10-13 15:25:18.070      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 20804 --- [         task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-10-13 15:25:18.843      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 20804 --- [           main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2021-10-13 15:25:18.859      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 20804 --- [           main] t.p.app.ThePostBookingAppApplication     : Started ThePostBookingAppApplication in 6.528 seconds (JVM running for 7.829)
+2021-10-13 15:29:07.917      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 20804 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-10-13 15:29:07.917      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 20804 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-10-13 15:29:07.935      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 20804 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 18 ms
+2021-10-13 15:36:34.709      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 21152 --- [kground-preinit] o.h.validator.internal.util.Version      : HV000001: Hibernate Validator 6.1.6.Final
+2021-10-13 15:36:34.741      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 21152 --- [           main] t.p.app.ThePostBookingAppApplication     : Starting ThePostBookingAppApplication on PC-0003 with PID 21152 (C:\Users\Alim Khowaja\Desktop\Alim Stuff\upwork\Post Booking App\the-post-booking-app\build\classes\java\main started by Alim Khowaja in C:\Users\Alim Khowaja\Desktop\Alim Stuff\upwork\Post Booking App\the-post-booking-app)
+2021-10-13 15:36:34.743      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 21152 --- [           main] t.p.app.ThePostBookingAppApplication     : No active profile set, falling back to default profiles: default
+2021-10-13 15:36:35.811      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 21152 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2021-10-13 15:36:35.970      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 21152 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 151ms. Found 8 JPA repository interfaces.
+2021-10-13 15:36:36.721      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 21152 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8016 (http)
+2021-10-13 15:36:36.738      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 21152 --- [           main] o.a.coyote.http11.Http11NioProtocol      : Initializing ProtocolHandler ["http-nio-8016"]
+2021-10-13 15:36:36.740      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 21152 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-10-13 15:36:36.741      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 21152 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2021-10-13 15:36:36.906      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 21152 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-10-13 15:36:36.907      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 21152 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2101 ms
+2021-10-13 15:36:36.966      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 21152 --- [           main] com.zaxxer.hikari.HikariDataSource       : erest - Starting...
+2021-10-13 15:36:37.166      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 21152 --- [           main] com.zaxxer.hikari.HikariDataSource       : erest - Start completed.
+2021-10-13 15:36:37.168      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 21152 --- [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:erest'
+2021-10-13 15:36:37.313      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 21152 --- [           main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 6.4.4 by Redgate
+2021-10-13 15:36:37.316      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 21152 --- [           main] o.f.c.internal.database.DatabaseFactory  : Database: jdbc:h2:mem:erest (H2 1.4)
+2021-10-13 15:36:37.396      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 21152 --- [           main] o.f.core.internal.database.base.Schema   : Creating schema "erest" ...
+2021-10-13 15:36:37.407      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 21152 --- [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table "erest"."flyway_schema_history" ...
+2021-10-13 15:36:37.488      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 21152 --- [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "erest": null
+2021-10-13 15:36:37.507      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 21152 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "erest" to version 1.0.1 - name
+2021-10-13 15:36:37.569      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 21152 --- [           main] o.f.core.internal.command.DbMigrate      : Successfully applied 1 migration to schema "erest" (execution time 00:00.091s)
+2021-10-13 15:36:37.636      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 21152 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-10-13 15:36:37.696      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 21152 --- [         task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-10-13 15:36:37.764      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 21152 --- [         task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.22.Final
+2021-10-13 15:36:37.876      WARN [the-post-booking-app,,,]     [null] [null] [null]     [null] 21152 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-10-13 15:36:37.983      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 21152 --- [         task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2021-10-13 15:36:38.158      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 21152 --- [         task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-10-13 15:36:38.509      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 21152 --- [           main] o.a.coyote.http11.Http11NioProtocol      : Starting ProtocolHandler ["http-nio-8016"]
+2021-10-13 15:36:38.539      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 21152 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8016 (http) with context path ''
+2021-10-13 15:36:38.541      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 21152 --- [           main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2021-10-13 15:36:39.735      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 21152 --- [         task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-10-13 15:36:39.751      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 21152 --- [         task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-10-13 15:36:40.572      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 21152 --- [           main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2021-10-13 15:36:40.584      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 21152 --- [           main] t.p.app.ThePostBookingAppApplication     : Started ThePostBookingAppApplication in 6.478 seconds (JVM running for 7.902)
+2021-10-13 15:36:49.018      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 21152 --- [nio-8016-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-10-13 15:36:49.018      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 21152 --- [nio-8016-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-10-13 15:36:49.042      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 21152 --- [nio-8016-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 15 ms
+2021-10-13 18:22:18.050      WARN [the-post-booking-app,,,]     [null] [null] [null]     [null] 21152 --- [nio-8016-exec-3] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 23502, SQLState: 23502
+2021-10-13 18:22:18.053     ERROR [the-post-booking-app,,,]     [null] [null] [null]     [null] 21152 --- [nio-8016-exec-3] o.h.engine.jdbc.spi.SqlExceptionHelper   : NULL not allowed for column "booking_id"; SQL statement:
+insert into erest.user (email, first_name, last_name, password, phone, restaurant_id, username, id) values (?, ?, ?, ?, ?, ?, ?, ?) [23502-200]
+2021-10-13 18:25:21.331      WARN [the-post-booking-app,,,]     [null] [null] [null]     [null] 21152 --- [nio-8016-exec-5] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 23502, SQLState: 23502
+2021-10-13 18:25:21.333     ERROR [the-post-booking-app,,,]     [null] [null] [null]     [null] 21152 --- [nio-8016-exec-5] o.h.engine.jdbc.spi.SqlExceptionHelper   : NULL not allowed for column "booking_id"; SQL statement:
+insert into erest.user (email, first_name, last_name, password, phone, restaurant_id, username, id) values (?, ?, ?, ?, ?, ?, ?, ?) [23502-200]
+2021-10-13 18:32:20.666      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 25188 --- [kground-preinit] o.h.validator.internal.util.Version      : HV000001: Hibernate Validator 6.1.6.Final
+2021-10-13 18:32:20.785      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 25188 --- [           main] t.p.app.ThePostBookingAppApplication     : Starting ThePostBookingAppApplication on PC-0003 with PID 25188 (C:\Users\Alim Khowaja\Desktop\Alim Stuff\upwork\Post Booking App\the-post-booking-app\build\classes\java\main started by Alim Khowaja in C:\Users\Alim Khowaja\Desktop\Alim Stuff\upwork\Post Booking App\the-post-booking-app)
+2021-10-13 18:32:20.787      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 25188 --- [           main] t.p.app.ThePostBookingAppApplication     : No active profile set, falling back to default profiles: default
+2021-10-13 18:32:23.944      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 25188 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2021-10-13 18:32:24.204      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 25188 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 239ms. Found 8 JPA repository interfaces.
+2021-10-13 18:32:25.766      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 25188 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8016 (http)
+2021-10-13 18:32:25.790      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 25188 --- [           main] o.a.coyote.http11.Http11NioProtocol      : Initializing ProtocolHandler ["http-nio-8016"]
+2021-10-13 18:32:25.792      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 25188 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-10-13 18:32:25.792      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 25188 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2021-10-13 18:32:26.100      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 25188 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-10-13 18:32:26.101      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 25188 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5127 ms
+2021-10-13 18:32:26.195      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 25188 --- [           main] com.zaxxer.hikari.HikariDataSource       : erest - Starting...
+2021-10-13 18:32:26.660      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 25188 --- [           main] com.zaxxer.hikari.HikariDataSource       : erest - Start completed.
+2021-10-13 18:32:26.676      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 25188 --- [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:erest'
+2021-10-13 18:32:26.949      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 25188 --- [           main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 6.4.4 by Redgate
+2021-10-13 18:32:26.974      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 25188 --- [           main] o.f.c.internal.database.DatabaseFactory  : Database: jdbc:h2:mem:erest (H2 1.4)
+2021-10-13 18:32:27.135      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 25188 --- [           main] o.f.core.internal.database.base.Schema   : Creating schema "erest" ...
+2021-10-13 18:32:27.149      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 25188 --- [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table "erest"."flyway_schema_history" ...
+2021-10-13 18:32:27.272      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 25188 --- [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "erest": null
+2021-10-13 18:32:27.286      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 25188 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "erest" to version 1.0.1 - name
+2021-10-13 18:32:27.356      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 25188 --- [           main] o.f.core.internal.command.DbMigrate      : Successfully applied 1 migration to schema "erest" (execution time 00:00.103s)
+2021-10-13 18:32:27.490      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 25188 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-10-13 18:32:27.617      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 25188 --- [         task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-10-13 18:32:27.784      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 25188 --- [         task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.22.Final
+2021-10-13 18:32:27.982      WARN [the-post-booking-app,,,]     [null] [null] [null]     [null] 25188 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-10-13 18:32:28.735      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 25188 --- [         task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2021-10-13 18:32:29.377      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 25188 --- [         task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-10-13 18:32:29.859      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 25188 --- [           main] o.a.coyote.http11.Http11NioProtocol      : Starting ProtocolHandler ["http-nio-8016"]
+2021-10-13 18:32:29.971      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 25188 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8016 (http) with context path ''
+2021-10-13 18:32:29.980      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 25188 --- [           main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2021-10-13 18:32:32.213      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 25188 --- [         task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-10-13 18:32:32.237      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 25188 --- [         task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-10-13 18:32:33.472      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 25188 --- [           main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2021-10-13 18:32:33.493      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 25188 --- [           main] t.p.app.ThePostBookingAppApplication     : Started ThePostBookingAppApplication in 14.236 seconds (JVM running for 16.129)
+2021-10-13 18:33:17.927      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 25188 --- [nio-8016-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-10-13 18:33:17.928      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 25188 --- [nio-8016-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-10-13 18:33:17.952      INFO [the-post-booking-app,,,]     [null] [null] [null]     [null] 25188 --- [nio-8016-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 24 ms
+2021-10-13 18:33:19.096      WARN [the-post-booking-app,,,]     [null] [null] [null]     [null] 25188 --- [nio-8016-exec-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 23502, SQLState: 23502
+2021-10-13 18:33:19.096     ERROR [the-post-booking-app,,,]     [null] [null] [null]     [null] 25188 --- [nio-8016-exec-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : NULL not allowed for column "booking_id"; SQL statement:
+insert into erest.user (email, first_name, last_name, password, phone, restaurant_id, username, id) values (?, ?, ?, ?, ?, ?, ?, ?) [23502-200]

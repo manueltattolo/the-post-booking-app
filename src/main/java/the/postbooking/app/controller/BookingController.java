@@ -1,5 +1,6 @@
 package the.postbooking.app.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 import postbookingapp.api.Booking;
@@ -23,7 +24,8 @@ import static org.springframework.http.ResponseEntity.ok;
 public class BookingController implements BookingApi {
 
     private BookingService service;
-    private final BookingRepresentationModelAssembler assembler;
+
+    private BookingRepresentationModelAssembler assembler;
 
     public BookingController(BookingService service, BookingRepresentationModelAssembler assembler) {
         this.assembler = assembler;

@@ -23,11 +23,9 @@ public class UpgradesRepresentationModelAssembler extends RepresentationModelAss
     /**
      * Creates a new {@link RepresentationModelAssemblerSupport} using the given controller class and resource type.
      *
-     * @param controllerClass must not be {@literal null}.
-     * @param resourceType    must not be {@literal null}.
      */
-    public UpgradesRepresentationModelAssembler(Class<?> controllerClass, Class<Upgrades> resourceType) {
-        super(controllerClass, resourceType);
+    public UpgradesRepresentationModelAssembler() {
+        super(UpgradesController.class, Upgrades.class);
     }
 
     /**

@@ -26,11 +26,9 @@ public class ServiceRepresentationModelAssembler extends
     /**
      * Creates a new {@link RepresentationModelAssemblerSupport} using the given controller class and resource type.
      *
-     * @param controllerClass must not be {@literal null}.
-     * @param resourceType    must not be {@literal null}.
      */
-    public ServiceRepresentationModelAssembler(Class<?> controllerClass, Class<RestService> resourceType) {
-        super(controllerClass, resourceType);
+    public ServiceRepresentationModelAssembler() {
+        super(ServiceController.class, RestService.class);
     }
 
     /**
