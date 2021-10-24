@@ -15,7 +15,11 @@ public enum ErrorCode {
     JSON_PARSE_ERROR("0005", "Make sure request payload should be a valid JSON object."),
     HTTP_MESSAGE_NOT_READABLE("0006", "Make sure request payload should be a valid JSON or XML object according to 'Content-Type'."),
     CUSTOMER_NOT_FOUND("0007", "Requested customer not found"),
-    RESOURCE_NOT_FOUND("0008", "Resource not found");
+    RESOURCE_NOT_FOUND("0008", "Resource not found"),
+    GENERIC_ALREADY_EXISTS("0013", "Already exists."),
+    ACCESS_DENIED("0014", "Access Denied."),
+    UNAUTHORIZED("0015", "Unauthorized");
+
 
     private String errCode;
     private String errMsgKey;

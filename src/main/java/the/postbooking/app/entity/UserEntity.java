@@ -53,4 +53,10 @@ public class UserEntity {
     @Column(name = "PHONE")
     private String phone;
 
+    @Column(name = "USER_STATUS")
+    private String userStatus = "ACTIVE";
+
+    @Column(name = "ROLE")
+    @Enumerated(EnumType.STRING)
+    private RoleEnum role = RoleEnum.USER;
 }

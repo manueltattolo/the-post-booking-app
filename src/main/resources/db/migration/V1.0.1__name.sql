@@ -101,6 +101,15 @@ create TABLE IF NOT EXISTS erest.service (
         REFERENCES erest.waiter(id)
 );
 
+create TABLE IF NOT EXISTS erest.user_token (
+ id uuid NOT NULL DEFAULT random_uuid(),
+ refresh_token varchar(128),
+ user_id uuid NOT NULL,
+ PRIMARY KEY(id),
+ FOREIGN KEY (user_id)
+  REFERENCES erest.user(id)
+);
+
 alter TABLE erest.user
     add FOREIGN KEY(booking_id)
     REFERENCES erest.booking(id);

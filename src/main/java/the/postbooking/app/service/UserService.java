@@ -1,10 +1,13 @@
 package the.postbooking.app.service;
 
+import postbookingapp.api.RefreshToken;
+import postbookingapp.api.SignedInUser;
 import postbookingapp.api.User;
 import the.postbooking.app.entity.UserEntity;
 
 import javax.validation.Valid;
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Created by Emanuele Tattolo on 14/09/2021
@@ -21,4 +24,15 @@ public interface UserService {
     public UserEntity getCustomerById(String id);
 
     public UserEntity toEntity(User user);
+
+    UserEntity findUserByUsername(String username);
+
+    Optional<SignedInUser> createUser(User user);
+
+    SignedInUser getSignedInUser(UserEntity userEntity);
+
+    Optional<SignedInUser> getAccessToken(RefreshToken refreshToken);
+
+    void removeRefreshToken(RefreshToken refreshToken);
+
 }

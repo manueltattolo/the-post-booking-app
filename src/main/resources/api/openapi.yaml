@@ -832,6 +832,109 @@ paths:
         202:
           description: Request accepted, returns this status even if user does not exist
           content: {}
+  /api/v1/users:
+    post:
+      tags:
+        - user
+      summary: Signup the a new customer (user)
+      description: Creates a new customer (user), who can 
+                   login and do the shopping.
+      operationId: signUp
+      requestBody:
+        content:
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/User'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+      responses:
+        201:
+          description: For successful user creation.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/SignedInUser'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SignedInUser'
+  /api/v1/auth/token:
+    post:
+      tags:
+        - user
+      summary: Signin the customer (user)
+      description: Signin the customer (user) that generates the JWT (access token) and refresh toke, which can be used for accessing APIs.
+      operationId: signIn
+      requestBody:
+        content:
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/SignInReq'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SignInReq'
+      responses:
+        200:
+          description: For user sign-in. Once successful, 
+                       user 
+                       receives the access and refresh token.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/SignedInUser'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SignedInUser'
+    delete:
+      tags:
+        - user
+      summary: Signouts the customer (user)
+      description: Signouts the customer (user). It removes the 
+                   refresh 
+                   token from DB. Last issued JWT should be 
+                   removed from 
+                   client end that if not removed last for 
+                   given 
+                   expiration time.
+      operationId: signOut
+      requestBody:
+        content:
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/RefreshToken'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RefreshToken'
+      responses:
+        202:
+          description: Accepts the request for logout.    
+  /api/v1/auth/token/refresh:
+    post:
+      tags:
+        - user
+      summary: Provides new JWT based on valid refresh token.
+      description: Provides new JWT based on valid refresh 
+                   token.
+      operationId: getAccessToken
+      requestBody:
+        content:
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/RefreshToken'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RefreshToken'
+      responses:
+        200:
+          description: For successful operation.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/SignedInUser'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SignedInUser'
+            
 
     
 components:
@@ -1024,3 +1127,38 @@ components:
               $ref: '#/components/schemas/Upgrades'
         xml:
           name: Waiter
+    SignedInUser:
+        description: Signed-in user information
+        type: object
+        properties:
+          refreshToken:
+            description: Refresh Token, a unique secure string
+            type: string
+          accessToken:
+            description: JWT Token aka access token
+            type: string
+          username:
+            description: User Name
+            type: string
+          userId:
+            description: User Identifier
+            type: string
+    SignInReq:
+        description: Request body for Sign-in
+        type: object
+        properties:
+          username:
+            description: username of the User
+            type: string
+          password:
+            description: password of the User
+            type: string
+    RefreshToken:
+        description: Contains the refresh token
+        type: object
+        properties:
+          refreshToken:
+            description: Refresh Token
+            type: string
+            
+            
