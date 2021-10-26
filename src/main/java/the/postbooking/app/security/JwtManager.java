@@ -2,6 +2,7 @@ package the.postbooking.app.security;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -22,13 +23,16 @@ import static the.postbooking.app.security.Constants.ROLE_CLAIM;
 @Component
 public class JwtManager {
 
-    private final RSAPrivateKey privateKey;
-    private final RSAPublicKey publicKey;
+    @Autowired
+    private RSAPrivateKey privateKey;
 
-    public JwtManager(RSAPrivateKey privateKey, RSAPublicKey publicKey) {
-        this.privateKey = privateKey;
-        this.publicKey = publicKey;
-    }
+    @Autowired
+    private RSAPublicKey publicKey;
+
+//    public JwtManager(RSAPrivateKey privateKey, RSAPublicKey publicKey) {
+//        this.privateKey = privateKey;
+//        this.publicKey = publicKey;
+//    }
 
     public String create(UserDetails principal) {
         final long now = System.currentTimeMillis();

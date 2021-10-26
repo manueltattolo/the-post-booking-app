@@ -1,7 +1,10 @@
 package the.postbooking.app.service;
 
 import org.apache.logging.log4j.util.Strings;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -30,21 +33,28 @@ import java.util.stream.StreamSupport;
  * UPDATE PROGRAM COMMENTS ABOUT PROGRAM HERE
  **/
 @Service
-public class UserServiceImpl implements UserService {
+public class UserServiceImpl implements UserService, UserDetailsService {
 
-    private final UserRepository repository;
-    private final UserTokenRepository userTokenRepository;
-    private final PasswordEncoder bCryptPasswordEncoder;
-    private final JwtManager tokenManager;
+    @Autowired
+    private UserRepository repository;
+
+    @Autowired
+    private UserTokenRepository userTokenRepository;
+
+    @Autowired
+    private PasswordEncoder bCryptPasswordEncoder;
+
+    @Autowired
+    private JwtManager tokenManager;
 
 
-    public UserServiceImpl(UserRepository repository, UserTokenRepository userTokenRepository,
-                           PasswordEncoder bCryptPasswordEncoder, JwtManager tokenManager) {
-        this.repository = repository;
-        this.userTokenRepository = userTokenRepository;
-        this.bCryptPasswordEncoder = bCryptPasswordEncoder;
-        this.tokenManager = tokenManager;
-    }
+//    public UserServiceImpl(UserRepository repository, UserTokenRepository userTokenRepository,
+//                           PasswordEncoder bCryptPasswordEncoder, JwtManager tokenManager) {
+//        this.repository = repository;
+//        this.userTokenRepository = userTokenRepository;
+//        this.bCryptPasswordEncoder = bCryptPasswordEncoder;
+//        this.tokenManager = tokenManager;
+//    }
 
     @Override
     public User createCustomer(@Valid User user) {
@@ -145,6 +155,11 @@ public class UserServiceImpl implements UserService {
         return token;
     }
 
+    @Override
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        return null;
+    }
+
     // https://stackoverflow.com/a/31214709/109354
     // or can use org.apache.commons.lang3.RandomStringUtils.randomAlphanumeric(n)
     private static class RandomHolder {
@@ -172,9 +187,9 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void removeRefreshToken(RefreshToken refreshToken) {
-        userTokenRepository.findByRefreshToken(refreshToken.getRefreshToken())
-              .ifPresentOrElse(userTokenRepository::delete, () -> {
-                  throw new InvalidRefreshTokenException("Invalid token.");
-              });
+//        userTokenRepository.findByRefreshToken(refreshToken.getRefreshToken()).
+//                orElse(userTokenRepository::delete, () -> {
+//                  throw new InvalidRefreshTokenException("Invalid token.");
+//              });
     }
 }
