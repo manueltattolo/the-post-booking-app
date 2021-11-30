@@ -3,13 +3,9 @@ package the.postbooking.app.security;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
-import org.springframework.core.convert.converter.Converter;
 import org.springframework.http.HttpMethod;
-import org.springframework.security.authentication.AbstractAuthenticationToken;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -18,23 +14,12 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.oauth2.jwt.Jwt;
-import org.springframework.security.oauth2.jwt.JwtDecoder;
-import org.springframework.security.oauth2.jwt.NimbusJwtDecoder;
-import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationConverter;
-import org.springframework.security.oauth2.server.resource.authentication.JwtGrantedAuthoritiesConverter;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
-import the.postbooking.app.entity.RoleEnum;
+import the.postbooking.app.service.UserService;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.security.*;
-import java.security.cert.Certificate;
-import java.security.cert.CertificateException;
-import java.security.interfaces.RSAPrivateKey;
-import java.security.interfaces.RSAPublicKey;
 import java.util.Arrays;
 
 import static the.postbooking.app.security.Constants.*;
@@ -48,14 +33,8 @@ import static the.postbooking.app.security.Constants.*;
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     private final Logger LOG = LoggerFactory.getLogger(getClass());
-
-    @Qualifier("userServiceImpl")
-    @Autowired
     private UserDetailsService userService;
-    
-    @Autowired
     private PasswordEncoder bCryptPasswordEncoder;
-    @Autowired
     private ObjectMapper mapper;
 
     @Value("${app.security.jwt.keystore-location}")
@@ -67,12 +46,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Value("${app.security.jwt.private-key-passphrase}")
     private String privateKeyPassphrase;
 
-//    public SecurityConfig(UserDetailsService userService,
-//                          PasswordEncoder bCryptPasswordEncoder, ObjectMapper mapper) {
-//        this.userService = userService;
-//        this.bCryptPasswordEncoder = bCryptPasswordEncoder;
-//        this.mapper = mapper;
-//    }
+    public SecurityConfig(UserDetailsService userService,
+                          PasswordEncoder bCryptPasswordEncoder, ObjectMapper mapper) {
+        this.userService = userService;
+        this.bCryptPasswordEncoder = bCryptPasswordEncoder;
+        this.mapper = mapper;
+    }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -89,9 +68,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
               .antMatchers(HttpMethod.POST, SIGNUP_URL).permitAll()
               .antMatchers(HttpMethod.POST, REFRESH_URL).permitAll()
               .antMatchers(HttpMethod.GET, PRODUCTS_URL).permitAll()
-              .antMatchers(H2_URL_PREFIX).permitAll()
-              .mvcMatchers(HttpMethod.POST, "/api/v1/addresses/**")
-              .hasAuthority(RoleEnum.ADMIN.getAuthority())
+
+//              .mvcMatchers(HttpMethod.POST, "/api/v1/restaurants**")
+//              .hasAuthority(RoleEnum.ADMIN.getAuthority())
               .anyRequest().authenticated()
               .and()
               /* Filter based security configuration
@@ -102,21 +81,21 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
               .and()
               .addFilterBefore(failureHandler , BearerTokenAuthenticationFilter.class)
               .addFilter(new LoginFilter(super.authenticationManager(), mapper))
-              .addFilter(new JwtAuthenticationFilter(super.authenticationManager()))
               */
-              .oauth2ResourceServer(oauth2ResourceServer -> oauth2ResourceServer.jwt(
-                    jwt -> jwt.jwtAuthenticationConverter(getJwtAuthenticationConverter())))
+              .addFilterBefore(new JwtAuthenticationFilter(new JwtManager(), (UserService) userService), UsernamePasswordAuthenticationFilter.class)
+//              .oauth2ResourceServer(oauth2ResourceServer -> oauth2ResourceServer.jwt(
+//                    jwt -> jwt.jwtAuthenticationConverter(getJwtAuthenticationConverter())))
               .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
     }
 
-    private Converter<Jwt, AbstractAuthenticationToken> getJwtAuthenticationConverter() {
-        JwtGrantedAuthoritiesConverter authorityConverter = new JwtGrantedAuthoritiesConverter();
-        authorityConverter.setAuthorityPrefix(AUTHORITY_PREFIX);
-        authorityConverter.setAuthoritiesClaimName(ROLE_CLAIM);
-        JwtAuthenticationConverter converter = new JwtAuthenticationConverter();
-        converter.setJwtGrantedAuthoritiesConverter(authorityConverter);
-        return converter;
-    }
+//    private Converter<Jwt, AbstractAuthenticationToken> getJwtAuthenticationConverter() {
+//        JwtGrantedAuthoritiesConverter authorityConverter = new JwtGrantedAuthoritiesConverter();
+//        authorityConverter.setAuthorityPrefix(AUTHORITY_PREFIX);
+//        authorityConverter.setAuthoritiesClaimName(ROLE_CLAIM);
+//        JwtAuthenticationConverter converter = new JwtAuthenticationConverter();
+//        converter.setJwtGrantedAuthoritiesConverter(authorityConverter);
+//        return converter;
+//    }
 
     @Override
     public void configure(AuthenticationManagerBuilder auth) throws Exception {
@@ -144,50 +123,50 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         return source;
     }
 
-    @Bean
-    public KeyStore keyStore() {
-        try {
-            KeyStore keyStore = KeyStore.getInstance(KeyStore.getDefaultType());
-            InputStream resourceAsStream = Thread.currentThread().getContextClassLoader()
-                  .getResourceAsStream(keyStorePath);
-            keyStore.load(resourceAsStream, keyStorePassword.toCharArray());
-            return keyStore;
-        } catch (IOException | CertificateException | NoSuchAlgorithmException | KeyStoreException e) {
-            LOG.error("Unable to load keystore: {}", keyStorePath, e);
-        }
-        throw new IllegalArgumentException("Unable to load keystore");
-    }
-
-    @Bean
-    public RSAPrivateKey jwtSigningKey(KeyStore keyStore) {
-        try {
-            Key key = keyStore.getKey(keyAlias, privateKeyPassphrase.toCharArray());
-            if (key instanceof RSAPrivateKey) {
-                return (RSAPrivateKey) key;
-            }
-        } catch (UnrecoverableKeyException | NoSuchAlgorithmException | KeyStoreException e) {
-            LOG.error("Unable to load private key from keystore: {}", keyStorePath, e);
-        }
-        throw new IllegalArgumentException("Unable to load private key");
-    }
-
-    @Bean
-    public RSAPublicKey jwtValidationKey(KeyStore keyStore) {
-        try {
-            Certificate certificate = keyStore.getCertificate(keyAlias);
-            PublicKey publicKey = certificate.getPublicKey();
-            if (publicKey instanceof RSAPublicKey) {
-                return (RSAPublicKey) publicKey;
-            }
-        } catch (KeyStoreException e) {
-            LOG.error("Unable to load private key from keystore: {}", keyStorePath, e);
-        }
-        throw new IllegalArgumentException("Unable to load RSA public key");
-    }
-
-    @Bean
-    public JwtDecoder jwtDecoder(RSAPublicKey rsaPublicKey) {
-        return NimbusJwtDecoder.withPublicKey(rsaPublicKey).build();
-    }
+//    @Bean
+//    public KeyStore keyStore() {
+//        try {
+//            KeyStore keyStore = KeyStore.getInstance(KeyStore.getDefaultType());
+//            InputStream resourceAsStream = Thread.currentThread().getContextClassLoader()
+//                  .getResourceAsStream(keyStorePath);
+//            keyStore.load(resourceAsStream, keyStorePassword.toCharArray());
+//            return keyStore;
+//        } catch (IOException | CertificateException | NoSuchAlgorithmException | KeyStoreException e) {
+//            LOG.error("Unable to load keystore: {}", keyStorePath, e);
+//        }
+//        throw new IllegalArgumentException("Unable to load keystore");
+//    }
+//
+//    @Bean
+//    public RSAPrivateKey jwtSigningKey(KeyStore keyStore) {
+//        try {
+//            Key key = keyStore.getKey(keyAlias, privateKeyPassphrase.toCharArray());
+//            if (key instanceof RSAPrivateKey) {
+//                return (RSAPrivateKey) key;
+//            }
+//        } catch (UnrecoverableKeyException | NoSuchAlgorithmException | KeyStoreException e) {
+//            LOG.error("Unable to load private key from keystore: {}", keyStorePath, e);
+//        }
+//        throw new IllegalArgumentException("Unable to load private key");
+//    }
+//
+//    @Bean
+//    public RSAPublicKey jwtValidationKey(KeyStore keyStore) {
+//        try {
+//            Certificate certificate = keyStore.getCertificate(keyAlias);
+//            PublicKey publicKey = certificate.getPublicKey();
+//            if (publicKey instanceof RSAPublicKey) {
+//                return (RSAPublicKey) publicKey;
+//            }
+//        } catch (KeyStoreException e) {
+//            LOG.error("Unable to load private key from keystore: {}", keyStorePath, e);
+//        }
+//        throw new IllegalArgumentException("Unable to load RSA public key");
+//    }
+//
+//    @Bean
+//    public JwtDecoder jwtDecoder(RSAPublicKey rsaPublicKey) {
+//        return NimbusJwtDecoder.withPublicKey(rsaPublicKey).build();
+//    }
 }
 

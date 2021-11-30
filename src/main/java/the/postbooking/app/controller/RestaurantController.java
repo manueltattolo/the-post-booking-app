@@ -30,6 +30,7 @@ public class RestaurantController implements RestaurantApi {
     }
 
     @Override
+    //    @RequestAttribute UserEntity user
     public ResponseEntity<Restaurant> createRestaurant(@Valid Restaurant restaurant) {
         return ok(service.createRestaurant(restaurant));
     }

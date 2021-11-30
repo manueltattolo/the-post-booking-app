@@ -2,7 +2,6 @@ package the.postbooking.app.service;
 
 import org.apache.logging.log4j.util.Strings;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Lazy;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -187,9 +186,9 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 
     @Override
     public void removeRefreshToken(RefreshToken refreshToken) {
-//        userTokenRepository.findByRefreshToken(refreshToken.getRefreshToken()).
-//                orElse(userTokenRepository::delete, () -> {
-//                  throw new InvalidRefreshTokenException("Invalid token.");
-//              });
+        userTokenRepository.findByRefreshToken(refreshToken.getRefreshToken()).
+            ifPresentOrElse(userTokenRepository::delete, () -> {
+             throw new InvalidRefreshTokenException("Invalid token.");
+            });
     }
 }
