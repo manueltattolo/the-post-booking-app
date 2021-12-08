@@ -3,7 +3,6 @@ package the.postbooking.app.security;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -14,11 +13,9 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
-import the.postbooking.app.service.UserService;
 
 import java.util.Arrays;
 
@@ -37,14 +34,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     private PasswordEncoder bCryptPasswordEncoder;
     private ObjectMapper mapper;
 
-    @Value("${app.security.jwt.keystore-location}")
+    /*@Value("${app.security.jwt.keystore-location}")
     private String keyStorePath;
     @Value("${app.security.jwt.keystore-password}")
     private String keyStorePassword;
     @Value("${app.security.jwt.key-alias}")
     private String keyAlias;
     @Value("${app.security.jwt.private-key-passphrase}")
-    private String privateKeyPassphrase;
+    private String privateKeyPassphrase;*/
 
     public SecurityConfig(UserDetailsService userService,
                           PasswordEncoder bCryptPasswordEncoder, ObjectMapper mapper) {
@@ -63,15 +60,21 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
               .cors()
               .and()
               .authorizeRequests()
+              .antMatchers(HttpMethod.GET, RESTAURANT_URL).permitAll()
+              .antMatchers(HttpMethod.POST, RESTAURANT_URL).permitAll()
               .antMatchers(HttpMethod.POST, TOKEN_URL).permitAll()
               .antMatchers(HttpMethod.DELETE, TOKEN_URL).permitAll()
               .antMatchers(HttpMethod.POST, SIGNUP_URL).permitAll()
               .antMatchers(HttpMethod.POST, REFRESH_URL).permitAll()
-              .antMatchers(HttpMethod.GET, PRODUCTS_URL).permitAll()
-
+              .antMatchers(HttpMethod.GET, SERVICES_URL).permitAll()
+              .antMatchers(HttpMethod.POST, SERVICES_URL).permitAll()
+              .antMatchers(HttpMethod.GET, BOOKINGS_URL).permitAll()
+              .antMatchers(HttpMethod.POST, BOOKINGS_URL).permitAll()
+              .antMatchers(HttpMethod.GET, CUSTOMERS_URL).permitAll()
+              .antMatchers(HttpMethod.POST, CUSTOMERS_URL).permitAll()
+//              .anyRequest().authenticated()
 //              .mvcMatchers(HttpMethod.POST, "/api/v1/restaurants**")
 //              .hasAuthority(RoleEnum.ADMIN.getAuthority())
-              .anyRequest().authenticated()
               .and()
               /* Filter based security configuration
               .exceptionHandling().accessDeniedHandler(accessDeniedHandler)
@@ -82,7 +85,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
               .addFilterBefore(failureHandler , BearerTokenAuthenticationFilter.class)
               .addFilter(new LoginFilter(super.authenticationManager(), mapper))
               */
-              .addFilterBefore(new JwtAuthenticationFilter(new JwtManager(), (UserService) userService), UsernamePasswordAuthenticationFilter.class)
+//                .addFilterBefore(new JwtAuthenticationFilter(new JwtManager(), (UserService) userService), UsernamePasswordAuthenticationFilter.class)
 //              .oauth2ResourceServer(oauth2ResourceServer -> oauth2ResourceServer.jwt(
 //                    jwt -> jwt.jwtAuthenticationConverter(getJwtAuthenticationConverter())))
               .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);

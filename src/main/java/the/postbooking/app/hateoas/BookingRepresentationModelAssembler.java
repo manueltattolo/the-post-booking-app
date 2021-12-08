@@ -1,13 +1,15 @@
 package the.postbooking.app.hateoas;
 
-import org.springframework.beans.BeanUtils;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.hateoas.server.mvc.RepresentationModelAssemblerSupport;
 import org.springframework.stereotype.Component;
 import postbookingapp.api.Booking;
 import the.postbooking.app.controller.BookingController;
 import the.postbooking.app.entity.BookingEntity;
 
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.ZoneOffset;
 import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
@@ -25,14 +27,21 @@ import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 @Component
 public class BookingRepresentationModelAssembler extends
       RepresentationModelAssemblerSupport<BookingEntity, Booking> {
+    final ZoneId zone = ZoneId.of("Europe/Paris");
+    LocalDateTime localDateTime = LocalDateTime.now();
+    ZoneOffset zoneOffSet = zone.getRules().getOffset(localDateTime);
 
+    private UserRepresentationModelAssembler uAssembler;
+    private RestaurantRepresentationModelAssembler rAssembler;
 
     /**
      * Creates a new {@link RepresentationModelAssemblerSupport} using the given controller class and resource type.
      *
      */
-    public BookingRepresentationModelAssembler() {
+    public BookingRepresentationModelAssembler(@Lazy UserRepresentationModelAssembler uAssembler, @Lazy RestaurantRepresentationModelAssembler rAssembler) {
         super(BookingController.class, Booking.class);
+        this.uAssembler = uAssembler;
+        this.rAssembler = rAssembler;
     }
 
     /**
@@ -45,7 +54,12 @@ public class BookingRepresentationModelAssembler extends
         String uid = Objects.nonNull(entity.getUser()) ? entity.getUser().getId().toString() : null;
         String bid = Objects.nonNull(entity.getId()) ? entity.getId().toString() : null;
         Booking resource = new Booking();
-        BeanUtils.copyProperties(entity, resource);
+        resource.setUser(uAssembler.toModel(entity.getUser()));
+        resource.setDate(entity.getDateTime().atOffset(zoneOffSet));
+        resource.setRestaurant(rAssembler.toModel(entity.getRestaurant()));
+        resource.setId(entity.getId().toString());
+        resource.setSeatsNo(entity.getSeatsNo());
+
         resource.add(linkTo(methodOn(BookingController.class).getBookingByBookingId(bid)).withSelfRel());
         resource.add(linkTo(methodOn(BookingController.class).getBookingsByCustomerId(uid)).withSelfRel());
         resource.add(linkTo(methodOn(BookingController.class).getAllBookings()).withRel("bookings"));

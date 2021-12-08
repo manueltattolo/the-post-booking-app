@@ -8,6 +8,8 @@ import the.postbooking.app.hateoas.ServiceRepresentationModelAssembler;
 import the.postbooking.app.service.ServiceService;
 
 import javax.validation.Valid;
+import java.sql.Timestamp;
+import java.time.OffsetDateTime;
 import java.util.List;
 
 import static org.springframework.http.ResponseEntity.accepted;
@@ -50,4 +52,8 @@ public class ServiceController implements ServiceApi {
         return ok(assembler.toListModel(ser.getServicesByBookingId(bookingId)));
     }
 
+    @Override
+    public ResponseEntity<List<RestService>> getServicesByGivenTime(OffsetDateTime date) {
+        return ok(assembler.toListModel(ser.getServicesByDateTime(Timestamp.valueOf(date.toLocalDateTime()))));
+    }
 }

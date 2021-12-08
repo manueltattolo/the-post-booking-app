@@ -14,6 +14,7 @@ public interface TableService {
     public void deleteTableFromTableId(String tableId);
     public Iterable<TableEntity> getTablesByCustomerId(String customerId);
     public List<TableEntity> getTablesByRestaurantId(String restaurantId);
-    public RestTable addTableByRestaurantId(String restaurantId, @Valid RestTable table);
+    public List<TableEntity> getTablesByRestName(String restName);
+    public @Valid RestTable addTableByRestaurantName(String restaurantName, @Valid RestTable table);
     public TableEntity toEntity(String restaurantId, RestTable t);
 }

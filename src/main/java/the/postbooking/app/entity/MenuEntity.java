@@ -38,6 +38,9 @@ public class MenuEntity {
     @Column(name = "UNIT_PRICE")
     private double unitPrice;
 
+    @Column(name = "PICTURE")
+    private String picture;
+
     @OneToOne
     @JoinColumn(name = "RESTAURANT_ID", referencedColumnName = "ID", nullable = false)
     private RestaurantEntity restaurant;

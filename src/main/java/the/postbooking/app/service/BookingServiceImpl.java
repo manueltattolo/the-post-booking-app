@@ -5,9 +5,10 @@ import postbookingapp.api.Booking;
 import the.postbooking.app.entity.BookingEntity;
 import the.postbooking.app.entity.ServiceEntity;
 import the.postbooking.app.entity.TableEntity;
-import the.postbooking.app.exception.CustomerNotFoundException;
+import the.postbooking.app.entity.UserEntity;
 import the.postbooking.app.exception.ResourceNotFoundException;
 import the.postbooking.app.repository.BookingRepository;
+import the.postbooking.app.repository.RestaurantRepository;
 import the.postbooking.app.repository.UserRepository;
 
 import javax.validation.Valid;
@@ -26,24 +27,30 @@ public class BookingServiceImpl implements BookingService {
     private UserRepository userRepo;
     private TableService tableSer;
     private ServiceService serviSer;
+    private RestaurantRepository restRep;
 
-    public BookingServiceImpl(BookingRepository repository, UserRepository userRepo, TableService tableSer, ServiceService serviSer) {
+    public BookingServiceImpl(BookingRepository repository, UserRepository userRepo,
+                              TableService tableSer, ServiceService serviSer, RestaurantRepository restRep) {
         this.repository = repository;
         this.userRepo = userRepo;
         this.tableSer = tableSer;
         this.serviSer = serviSer;
+        this.restRep = restRep;
     }
 
     @Override
     public Booking addBooking(@Valid Booking booking) {
         if (Objects.isNull(booking.getUser())) {
-            throw new ResourceNotFoundException("Invalid customer id.");
+            throw new ResourceNotFoundException("Not user found.");
         }
         if (Objects.isNull(booking.getSeatsNo())) {
             throw new ResourceNotFoundException("Invalid seats number.");
         }
         if (Objects.isNull(booking.getDate().toLocalDateTime())) {
             throw new ResourceNotFoundException("Invalid date.");
+        }
+        if (booking.getRestaurant().getRestName() == null) {
+            throw new ResourceNotFoundException("Restaurant not found");
         }
 
         //verification that restaurant has tables available for that time.
@@ -52,9 +59,11 @@ public class BookingServiceImpl implements BookingService {
         List<TableEntity> tablesBookedAtTime = serviSer.getServicesByDateTime(Timestamp.valueOf(newBooking.getDateTime()))
               .stream().map(ServiceEntity::getRest_table).collect(Collectors.toList());
         //calculating tables available by getting the total tables in the restaurant and removing the booked ones
-        List<TableEntity> tablesAv = tableSer.getTablesByRestaurantId(newBooking.getUser().getRestaurant().getId().toString());
-        tablesAv.removeAll(tablesBookedAtTime);
+        System.out.print(tablesBookedAtTime.size());
 
+        List<TableEntity> tablesAv = tableSer.getTablesByRestName(newBooking.getRestaurant().getRestName());
+        tablesAv.removeAll(tablesBookedAtTime);
+        System.out.print(tablesAv.size());
         if (tablesAv.size() == 0) {
             throw new ResourceNotFoundException("No table available for this time");
         }
@@ -115,7 +124,6 @@ public class BookingServiceImpl implements BookingService {
         BookingEntity ori = getBookingByBookingId(id);
         BookingEntity mod = toEntity(b);
         ori.setDateTime(mod.getDateTime());
-        ori.setServices(mod.getServices());
         ori.setSeatsNo(mod.getSeatsNo());
         repository.save(ori);
         return ori;
@@ -124,10 +132,23 @@ public class BookingServiceImpl implements BookingService {
     @Override
     public BookingEntity toEntity(Booking m) {
         BookingEntity entity = new BookingEntity();
-        entity.setUser(userRepo.findById(UUID.fromString(m.getUser().getId())).orElseThrow(() -> new CustomerNotFoundException(
-              String.format(" - %s", m.getId()))));
+        UserEntity newUser = new UserEntity();
+
+        if (m.getUser().getId() == null) {
+            newUser.setFirstName(m.getUser().getFirstname());
+            newUser.setLastName(m.getUser().getLastname());
+            newUser.setEmail(m.getUser().getEmail());
+            newUser.setPhone(m.getUser().getPhone());
+            newUser.setUsername(m.getUser().getUsername());
+            newUser.setPassword(m.getUser().getPassword());
+        } else {
+            newUser = userRepo.findById(UUID.fromString(m.getUser().getId())).orElseThrow(() -> new ResourceNotFoundException("Invalid customer id."));
+        }
+        userRepo.save(newUser);
+        entity.setUser(newUser);
         entity.setSeatsNo(m.getSeatsNo());
         entity.setDateTime(m.getDate().toLocalDateTime());
+        entity.setRestaurant(restRep.findByRestName(m.getRestaurant().getRestName()));
         return entity;
     }
 }

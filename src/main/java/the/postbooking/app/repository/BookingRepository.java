@@ -16,6 +16,6 @@ import java.util.UUID;
  **/
 @Repository
 public interface BookingRepository extends JpaRepository<BookingEntity, UUID> {
-    @Query(value = "select * from erest.booking inner join erest.user on erest.user.ID = :customerId", nativeQuery = true)
-    List<BookingEntity> findByCustomerId(@Param("customerId")UUID customerId);
+    @Query(value = "select * from erest.booking b join erest.user where user.id = :customerId", nativeQuery = true)
+    List<BookingEntity> findByCustomerId(@Param("customerId") UUID customerId);
 }

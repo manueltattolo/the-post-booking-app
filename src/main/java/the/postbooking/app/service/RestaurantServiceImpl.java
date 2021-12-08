@@ -8,7 +8,6 @@ import the.postbooking.app.repository.RestaurantRepository;
 
 import javax.validation.Valid;
 import java.util.List;
-import java.util.UUID;
 
 /**
  * Created by Emanuele Tattolo on 15/09/2021
@@ -20,6 +19,13 @@ public class RestaurantServiceImpl implements RestaurantService {
     private RestaurantRepository repository;
 
     public RestaurantServiceImpl(RestaurantRepository repository) { this.repository = repository; }
+
+//    @PostConstruct
+//    private void setup() {
+//        Restaurant restaurant = new Restaurant();
+//
+//        this.createRestaurant(restaurant);
+//    }
 
     @Override
     public Restaurant createRestaurant(@Valid Restaurant restaurant) {
@@ -38,7 +44,6 @@ public class RestaurantServiceImpl implements RestaurantService {
     @Override
     public RestaurantEntity toEntity(Restaurant restaurant) {
         RestaurantEntity entity = new RestaurantEntity();
-        entity.setId(UUID.fromString(restaurant.getId()));
         entity.setTablesNo(restaurant.getTablesNo());
         entity.setHistory(restaurant.getHistory());
         entity.setAddress(restaurant.getAddress());

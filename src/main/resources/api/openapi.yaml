@@ -46,11 +46,6 @@ paths:
         200:
           description: For successful fetch.
           content:
-            application/xml:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/Booking'
             application/json:
               schema:
                 type: array
@@ -74,11 +69,6 @@ paths:
         200:
           description: successful operation
           content:
-            application/xml:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/Booking'
             application/json:
               schema:
                 type: array
@@ -260,6 +250,33 @@ paths:
         202:
           description: Request accepted, returns this status even if user does not exist
           content: {}
+  /api/v1/services/{date}:
+    get:
+      tags:
+        - service
+      summary: Returns the list of booked services for a given datetime
+      description: Returns the table and service booked in the restaurant for that given time
+      operationId: getServicesByGivenTime
+      parameters:
+        - name: date
+          in: path
+          description: Booking Date
+          required: true
+          schema:
+            type: string
+            format: date-time
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/RestService'
+        404:
+          description: Given customer ID doesn't exist
+          content: {}
   /api/v1/{customerId}/booking/services/tables:
     get:
       tags:
@@ -308,15 +325,46 @@ paths:
       responses:
         202:
           description: Accepts the request, regardless of whether the specified table exists in the service or not.
-  /api/v1/{restaurantId}/table:
+  /api/v1/restaurants/{restName}/tables:
+    get:
+      tags:
+        - table
+      summary: Returns the tables of given restaurant name
+      description: Returns the tables of given restaurant name
+      operationId: getTablesByRestName
+      parameters:
+        - name: restName
+          in: path
+          description: Restaurant Name
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: If Restaurant exists.
+          content:
+            application/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/RestTable'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/RestTable'
+        404:
+          description: Restaurant doesn't exist for given name.
+          content: {}
+  /api/v1/restaurants/{restName}/table:
     post:
       tags:
         - table
       summary: Adds table to given restaurant
       description: Adds table to given restaurant
-      operationId: addTableByRestaurantId
+      operationId: addTableByRestaurantName
       parameters:
-        - name: restaurantId
+        - name: restName
           in: path
           description: Restaurant Identifier
           required: true
@@ -340,9 +388,9 @@ paths:
                 $ref: '#/components/schemas/RestTable'
             application/json:
               schema:
-                $ref: '#/components/schemas/Upgrades'
+                $ref: '#/components/schemas/RestTable'
         404:
-          description: Given table ID doesn't exist
+          description: Given restaurant name doesn't exist
           content: {} 
   /api/v1/booking:
     post:
@@ -391,9 +439,6 @@ paths:
         200:
           description: If Booking exists.
           content:
-            application/xml:
-              schema:
-                $ref: '#/components/schemas/Booking'
             application/json:
               schema:
                 $ref: '#/components/schemas/Booking'
@@ -411,11 +456,6 @@ paths:
         200:
           description: For successful fetch.
           content:
-            application/xml:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/User'
             application/json:
               schema:
                 type: array
@@ -429,9 +469,6 @@ paths:
       operationId: createCustomer
       requestBody:
         content:
-          application/xml:
-            schema:
-              $ref: '#/components/schemas/User'
           application/json:
             schema:
               $ref: '#/components/schemas/User'
@@ -439,9 +476,6 @@ paths:
         200:
           description: For successful fetch.
           content:
-            application/xml:
-              schema:
-                $ref: '#/components/schemas/User'
             application/json:
               schema:
                 $ref: '#/components/schemas/User'
@@ -463,9 +497,6 @@ paths:
         200:
           description: For successful fetch.
           content:
-            application/xml:
-              schema:
-                $ref: '#/components/schemas/User'
             application/json:
               schema:
                 $ref: '#/components/schemas/User'
@@ -517,7 +548,7 @@ paths:
         content:
           application/xml:
             schema:
-              $ref: '#/components/schemas/Restaurant'
+                $ref: '#/components/schemas/Restaurant'
           application/json:
             schema:
               $ref: '#/components/schemas/Restaurant'
@@ -525,9 +556,6 @@ paths:
         200:
           description: For successful fetch.
           content:
-            application/xml:
-              schema:
-                $ref: '#/components/schemas/Restaurant'
             application/json:
               schema:
                 $ref: '#/components/schemas/Restaurant'
@@ -943,7 +971,7 @@ components:
       type: object
       properties:
         id:
-          description: User Identifie
+          description: User Identifier
           type: string
         firstname:
           type: string
@@ -980,6 +1008,8 @@ components:
           format: int32
         user:
           $ref: '#/components/schemas/User'
+        restaurant:
+          $ref: '#/components/schemas/Restaurant'
         services:
           description: Collection of Services
           type: array
@@ -1055,6 +1085,8 @@ components:
         id:
           description: Restaurant identifier
           type: string
+        restName:
+          type: string
         tablesNo:
           type: integer
           format: int32
@@ -1072,6 +1104,8 @@ components:
         phone:
           type: string
         email:
+          type: string
+        picture:
           type: string
         menu:
           $ref: '#/components/schemas/Menu'
@@ -1101,6 +1135,8 @@ components:
             type: integer
           unitPrice:
             type: number
+          picture:
+            type: string
           restaurant:
             $ref: '#/components/schemas/Restaurant'
         xml:

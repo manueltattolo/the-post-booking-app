@@ -35,10 +35,14 @@ public class UpgradesRepresentationModelAssembler extends RepresentationModelAss
      */
     @Override
     public Upgrades toModel(UpgradesEntity entity) {
-        String tid = Objects.nonNull(entity.getRest_table()) ? entity.getRest_table().getId().toString() : null;
-        Upgrades resource = new Upgrades();
-        BeanUtils.copyProperties(entity, resource);
-        resource.add(linkTo(methodOn(UpgradesController.class).getUpgradesByTableId(tid)).withSelfRel());
-        return resource;
+        if (Objects.nonNull(entity)) {
+            String tid = Objects.nonNull(entity.getRest_table()) ? entity.getRest_table().getId().toString() : null;
+            Upgrades resource = new Upgrades();
+            BeanUtils.copyProperties(entity, resource);
+            resource.add(linkTo(methodOn(UpgradesController.class).getUpgradesByTableId(tid)).withSelfRel());
+            return resource;
+        } else {
+            return null;
+        }
     }
 }

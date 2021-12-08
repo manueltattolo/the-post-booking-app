@@ -15,9 +15,12 @@ import java.util.UUID;
  **/
 @Repository
 public interface TableRepository extends JpaRepository<TableEntity, UUID> {
-    @Query(value = "select * from erest.table inner join erest.user on erest.user.ID = :customerId", nativeQuery = true)
+    @Query(value = "select * from erest.rest_table inner join erest.user on erest.user.ID = :customerId", nativeQuery = true)
     List<TableEntity> findByCustomerId(@Param("customerId")UUID id);
 
-    @Query(value = "select * from erest.table inner join erest.restaurant on erest.restaurant.ID = :fromString", nativeQuery = true)
+   @Query(value = "select * from erest.rest_table inner join erest.restaurant on erest.restaurant.ID = :fromString", nativeQuery = true)
     List<TableEntity> findByRestaurantId(UUID fromString);
+
+    @Query(value = "select * from erest.rest_table inner join erest.restaurant on erest.restaurant.restname = :restname", nativeQuery = true)
+    List<TableEntity> findByRestaurantName(@Param("restname") String restname);
 }

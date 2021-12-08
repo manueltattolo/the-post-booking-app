@@ -1,5 +1,7 @@
 package the.postbooking.app.exception;
 
+import java.util.function.Supplier;
+
 /**
  * @author : github.com/sharmasourabh
  * @project : Chapter04 - Modern API Development with Spring and Spring Boot

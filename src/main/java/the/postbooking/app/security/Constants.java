@@ -12,7 +12,10 @@ public class Constants {
     public static final String SIGNUP_URL = "/api/v1/users";
     public static final String TOKEN_URL = "/api/v1/auth/token";
     public static final String REFRESH_URL = "/api/v1/auth/token/refresh";
-    public static final String PRODUCTS_URL = "/api/v1/products/**";
+    public static final String RESTAURANT_URL = "/api/v1/restaurants/**";
+    public static final String SERVICES_URL = "/api/v1/services";
+    public static final String BOOKINGS_URL = "/api/v1/booking";
+    public static final String CUSTOMERS_URL = "/api/v1/customers";
     public static final String AUTHORIZATION = "Authorization";
     public static final String TOKEN_PREFIX = "Bearer ";
     public static final String SECRET_KEY = "SECRET_KEY";

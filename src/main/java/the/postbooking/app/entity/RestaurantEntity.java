@@ -6,7 +6,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.List;
 import java.util.UUID;
 
 /**
@@ -29,7 +28,10 @@ public class RestaurantEntity {
     @Column(name = "TABLES_NUM", nullable = false)
     private int tablesNo;
 
-    @Column(name = "HISTORY")
+    @Column(name = "RESTNAME")
+    private String restName;
+
+    @Column(name = "HYSTORY")
     private String history;
 
     @Column(name = "ADDRESS")
@@ -44,14 +46,17 @@ public class RestaurantEntity {
     @Column(name = "PHONE")
     private String phone;
 
-    @OneToMany(mappedBy = "restaurant", fetch = FetchType.LAZY, orphanRemoval = true)
+    @Column(name = "PICTURE")
+    private String picture;
+
+    /*@OneToMany(mappedBy = "restaurant", fetch = FetchType.LAZY, orphanRemoval = true)
     private List<UserEntity> users;
 
     @OneToMany(mappedBy = "restaurant", fetch = FetchType.LAZY, orphanRemoval = true)
     private List<TableEntity> tables;
 
     @OneToMany(mappedBy = "restaurant", fetch = FetchType.LAZY, orphanRemoval = true)
-    private List<WaiterEntity> waiters;
+    private List<WaiterEntity> waiters;*/
 
     @OneToOne(mappedBy = "restaurant", fetch = FetchType.LAZY, orphanRemoval = true)
     private MenuEntity menu;

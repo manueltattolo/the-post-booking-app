@@ -95,7 +95,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     @Override
     public UserEntity toEntity(User user) {
         UserEntity entity = new UserEntity();
-        entity.setId(UUID.fromString(user.getId()));
+        if (user.getId() != null) entity.setId(UUID.fromString(user.getId()));
         entity.setEmail(user.getEmail());
         entity.setUsername(user.getUsername());
         entity.setPassword(user.getPassword());
@@ -111,17 +111,15 @@ public class UserServiceImpl implements UserService, UserDetailsService {
             throw new UsernameNotFoundException("Invalid user.");
         }
         final String uname = username.trim();
-        Optional<UserEntity> oUserEntity =  repository.findByUsername(uname);
-        UserEntity userEntity = oUserEntity.orElseThrow(() ->
-              new UsernameNotFoundException(
-                    String.format("Given user(%s) not found.",                               uname)));
-        return userEntity;    }
+        Optional<UserEntity> oUserEntity = repository.findByUsername(uname);
+        UserEntity userEntity = oUserEntity.orElseThrow(() -> new UsernameNotFoundException(String.format("Given user(%s) not found.", uname)));
+        return userEntity;
+    }
 
     @Override
     @Transactional
     public Optional<SignedInUser> createUser(User user) {
-        Integer count = repository.findByUsernameOrEmail(
-              user.getUsername(), user.getEmail());
+        Integer count = repository.findByUsernameOrEmail(user.getUsername(), user.getEmail());
         if (count > 0) {
             throw new GenericAlreadyExistsException("Use different username and email.");
         }
@@ -134,18 +132,8 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     }
 
     private SignedInUser createSignedInUser(UserEntity userEntity) {
-        String token = tokenManager.create(
-              org.springframework.security.core.userdetails.User.
-                    builder()
-                    .username(userEntity.getUsername())
-                    .password(userEntity.getPassword())
-                    .authorities(Objects.nonNull(userEntity.getRole()) ?
-                          userEntity.getRole().name() : "")
-                    .build());
-        return new SignedInUser().username(
-              userEntity.getUsername())
-              .accessToken(token)
-              .userId(userEntity.getId().toString());
+        String token = tokenManager.create(org.springframework.security.core.userdetails.User.builder().username(userEntity.getUsername()).password(userEntity.getPassword()).authorities(Objects.nonNull(userEntity.getRole()) ? userEntity.getRole().name() : "").build());
+        return new SignedInUser().username(userEntity.getUsername()).accessToken(token).userId(userEntity.getId().toString());
     }
 
     private String createRefreshToken(UserEntity user) {
@@ -159,15 +147,6 @@ public class UserServiceImpl implements UserService, UserDetailsService {
         return null;
     }
 
-    // https://stackoverflow.com/a/31214709/109354
-    // or can use org.apache.commons.lang3.RandomStringUtils.randomAlphanumeric(n)
-    private static class RandomHolder {
-        static final Random random = new SecureRandom();
-        public static String randomKey(int length) {
-            return String.format("%" + length + "s", new BigInteger(length * 5/*base 32,2^5*/, random).toString(32)).replace('\u0020', '0');
-        }
-    }
-
     @Override
     @Transactional
     public SignedInUser getSignedInUser(UserEntity userEntity) {
@@ -177,18 +156,23 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 
     @Override
     public Optional<SignedInUser> getAccessToken(RefreshToken refreshToken) {
-        return userTokenRepository
-              .findByRefreshToken(refreshToken.getRefreshToken())
-              .map(ut -> Optional.of(createSignedInUser(ut.getUser())
-                    .refreshToken(refreshToken.getRefreshToken())))
-              .orElseThrow(() -> new InvalidRefreshTokenException("Invalid token."));
+        return userTokenRepository.findByRefreshToken(refreshToken.getRefreshToken()).map(ut -> Optional.of(createSignedInUser(ut.getUser()).refreshToken(refreshToken.getRefreshToken()))).orElseThrow(() -> new InvalidRefreshTokenException("Invalid token."));
     }
 
     @Override
     public void removeRefreshToken(RefreshToken refreshToken) {
-        userTokenRepository.findByRefreshToken(refreshToken.getRefreshToken()).
-            ifPresentOrElse(userTokenRepository::delete, () -> {
-             throw new InvalidRefreshTokenException("Invalid token.");
-            });
+        userTokenRepository.findByRefreshToken(refreshToken.getRefreshToken()).ifPresentOrElse(userTokenRepository::delete, () -> {
+            throw new InvalidRefreshTokenException("Invalid token.");
+        });
+    }
+
+    // https://stackoverflow.com/a/31214709/109354
+    // or can use org.apache.commons.lang3.RandomStringUtils.randomAlphanumeric(n)
+    private static class RandomHolder {
+        static final Random random = new SecureRandom();
+
+        public static String randomKey(int length) {
+            return String.format("%" + length + "s", new BigInteger(length * 5/*base 32,2^5*/, random).toString(32)).replace('\u0020', '0');
+        }
     }
 }

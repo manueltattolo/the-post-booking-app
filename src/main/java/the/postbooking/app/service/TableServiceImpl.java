@@ -39,26 +39,32 @@ public class TableServiceImpl implements TableService {
 
     @Override
     public List<TableEntity> getTablesByRestaurantId(String restaurantId) {
-        return repository.findByRestaurantId(UUID.fromString(restaurantId));
+        return null;//repository.findByRestaurantId(UUID.fromString(restaurantId));
     }
 
     @Override
-    public RestTable addTableByRestaurantId(String restaurantId, @Valid RestTable table) {
+    public List<TableEntity> getTablesByRestName(String restName) {
+        return repository.findByRestaurantName(restName);
+    }
+
+    @Override
+    public RestTable addTableByRestaurantName(String restaurantName, @Valid RestTable table) {
         if (Objects.isNull(table.getTableSeats())) {
             throw new ResourceNotFoundException("No seats number on the table.");
         }
-        repository.save(toEntity(restaurantId, table));
+
+        repository.save(toEntity(restaurantName, table));
         return table;
     }
     //modify table or service?
     //getTablesByServices??
 
     @Override
-    public TableEntity toEntity(String restaurantId, RestTable t) {
+    public TableEntity toEntity(String restaurantName, RestTable t) {
         TableEntity entity = new TableEntity();
-        entity.setId(UUID.fromString(t.getId()));
-        entity.setRestaurant(restaRepo.findById(UUID.fromString(restaurantId)).get());
+        entity.setRestaurant(restaRepo.findByRestName(restaurantName));
         entity.setTable_seats(t.getTableSeats());
+        System.out.print(entity.getRestaurant().getRestName() + " and " + entity.getRestaurant().getId());
         return entity;
     }
 }

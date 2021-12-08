@@ -31,8 +31,13 @@ public class TableController implements TableApi {
     }
 
     @Override
-    public ResponseEntity<RestTable> addTableByRestaurantId(String restaurantId, @Valid RestTable RestTable) {
-        return ok(service.addTableByRestaurantId(restaurantId, RestTable));
+    public ResponseEntity<RestTable> addTableByRestaurantName(String restaurantName, @Valid RestTable RestTable) {
+        return ok(service.addTableByRestaurantName(restaurantName, RestTable));
+    }
+
+    @Override
+    public ResponseEntity<List<RestTable>> getTablesByRestName(String restName) {
+        return ok(assembler.toListModel(service.getTablesByRestName(restName)));
     }
 
     @Override

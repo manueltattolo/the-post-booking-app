@@ -6,7 +6,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.List;
 import java.util.UUID;
 
 /**
@@ -29,8 +28,8 @@ public class WaiterEntity {
     @Column(name = "FULLNAME")
     private String fullname;
 
-    @OneToMany(mappedBy = "waiter", fetch = FetchType.LAZY)
-    private List<ServiceEntity> services;
+    /*@OneToMany(mappedBy = "waiter", fetch = FetchType.LAZY)
+    private List<ServiceEntity> services;*/
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "RESTAURANT_ID", referencedColumnName = "ID", nullable = false)

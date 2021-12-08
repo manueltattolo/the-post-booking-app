@@ -7,7 +7,6 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import java.util.List;
 import java.util.UUID;
 
 /**
@@ -26,12 +25,12 @@ public class UserEntity {
     @Column(name = "ID", updatable = false, nullable = false)
     private UUID id;
 
-    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, orphanRemoval = true)
-    private List<BookingEntity> bookings;
+    /*@OneToMany(mappedBy = "user", fetch = FetchType.LAZY, orphanRemoval = true)
+    private List<BookingEntity> bookings;*/
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "RESTAURANT_ID", referencedColumnName = "ID", nullable = false)
-    private RestaurantEntity restaurant;
+    /*@ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "RESTAURANT_ID", referencedColumnName = "ID", nullable = true)
+    private RestaurantEntity restaurant;*/
 
     @NotNull(message = "User name is required.")
     @Basic(optional = false)
@@ -41,10 +40,10 @@ public class UserEntity {
     @Column(name = "PASSWORD")
     private String password;
 
-    @Column(name = "FIRST_NAME")
+    @Column(name = "FIRSTNAME")
     private String firstName;
 
-    @Column(name = "LAST_NAME")
+    @Column(name = "LASTNAME")
     private String lastName;
 
     @Column(name = "EMAIL")
@@ -53,7 +52,7 @@ public class UserEntity {
     @Column(name = "PHONE")
     private String phone;
 
-    @Column(name = "USER_STATUS")
+    @Column(name = "USERSTATUS")
     private String userStatus = "ACTIVE";
 
     @Column(name = "ROLE")

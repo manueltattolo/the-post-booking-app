@@ -12,4 +12,6 @@ import java.util.UUID;
  **/
 @Repository
 public interface RestaurantRepository extends JpaRepository<RestaurantEntity, UUID> {
+
+    RestaurantEntity findByRestName(String restName);
 }

@@ -7,7 +7,6 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
-import java.util.List;
 import java.util.UUID;
 
 /**
@@ -27,12 +26,16 @@ public class BookingEntity {
     @Column(name = "ID", updatable = false, nullable = false)
     private UUID id;
 
-    @OneToMany(mappedBy = "booking", fetch = FetchType.LAZY, orphanRemoval = true)
-    private List<ServiceEntity> services;
+    /*@OneToMany(mappedBy = "booking", fetch = FetchType.LAZY, orphanRemoval = true)
+    private List<ServiceEntity> services;*/
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "USER_ID", referencedColumnName = "ID", nullable = false)
+    @JoinColumn(name = "CUSTOMER_ID", referencedColumnName = "ID", nullable = false)
     private UserEntity user;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "RESTAURANT_ID", referencedColumnName = "ID", nullable = false)
+    private RestaurantEntity restaurant;
 
     @Column(name = "SEATS_NUM", nullable = false)
     private int seatsNo;
