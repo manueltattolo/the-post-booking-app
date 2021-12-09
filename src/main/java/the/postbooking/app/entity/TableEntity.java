@@ -38,6 +38,4 @@ public class TableEntity {
     @JoinColumn(name = "RESTAURANT_ID", referencedColumnName = "ID", nullable = false)
     private RestaurantEntity restaurant;
 
-    @OneToOne(mappedBy = "rest_table", fetch = FetchType.LAZY, orphanRemoval = true)
-    private UpgradesEntity upgrades;
 }

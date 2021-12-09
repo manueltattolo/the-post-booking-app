@@ -12,8 +12,8 @@ import java.util.List;
  **/
 public interface UpgradesService {
     public List<Upgrades> addUpgradesByTableId(String tableId, @Valid Upgrades upgrades);
-    public List<Upgrades> addOrReplaceUpgradesByTableId(String tableId, @Valid Upgrades upgrades);
-    public void deleteAllUpgradesByTableId(String tableId);
-    public UpgradesEntity getUpgradesByTableId(String tableId);
+    public List<Upgrades> addOrReplaceUpgradesByServiceId(String tableId, @Valid Upgrades upgrades);
+    public void deleteAllUpgradesByServiceId(String tableId);
+    public UpgradesEntity getUpgradesByServiceId(String tableId);
     public UpgradesEntity toEntity(Upgrades upgrades);
 }

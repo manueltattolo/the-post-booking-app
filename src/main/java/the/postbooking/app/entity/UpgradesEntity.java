@@ -6,7 +6,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.List;
 import java.util.UUID;
 
 /**
@@ -42,11 +41,11 @@ public class UpgradesEntity {
     private String dietary;
 
     @OneToOne
-    @JoinColumn(name = "rest_table_ID", referencedColumnName = "ID")
-    private TableEntity rest_table;
+    @JoinColumn(name = "SERVICE_ID", referencedColumnName = "ID")
+    private ServiceEntity service;
 
-    @OneToMany(mappedBy = "upgrades", fetch = FetchType.LAZY)
-    private List<WaiterEntity> waiters;
+    /*@OneToMany(mappedBy = "UPGRADES", fetch = FetchType.LAZY)
+    private List<WaiterEntity> waiters;*/
 
 
 

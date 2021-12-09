@@ -622,17 +622,17 @@ paths:
         202:
           description: Accepts the deletion request and perform deletion. If ID does not exist, does nothing.
           content: {}
-  /api/v1/{tableId}/upgrades:
+  /api/v1/{serviceId}/upgrades:
     get:
       tags:
         - upgrades
       summary: Get all upgrades
-      description: Get all the upgrades by given table Id
-      operationId: getUpgradesByTableId
+      description: Get all the upgrades by given service Id
+      operationId: getUpgradesByServiceId
       parameters:
-        - name: tableId
+        - name: serviceId
           in: path
-          description: table Identifier
+          description: Service Identifier
           required: true
           schema:
             type: string
@@ -649,13 +649,13 @@ paths:
     post:
       tags:
         - upgrades
-      summary: Adds upgrades to given table
-      description: Adds upgrades to given table
-      operationId: addUpgradesByTableId
+      summary: Adds upgrades to given service
+      description: Adds upgrades to given service
+      operationId: addUpgradesByServiceId
       parameters:
-        - name: tableId
+        - name: serviceId
           in: path
-          description: table Identifier
+          description: service Identifier
           required: true
           schema:
             type: string
@@ -688,13 +688,13 @@ paths:
     put:
       tags:
         - upgrades
-      summary: Replace/add an upgrades in the table
-      description: Replace/add an upgrades in the table if it doesn't already exist, or replace with given upgrades if it does
-      operationId: addOrReplaceUpgradesByTableId
+      summary: Replace/add an upgrades in the service
+      description: Replace/add an upgrades in the service if it doesn't already exist, or replace with given upgrades if it does
+      operationId: addOrReplaceUpgradesByServiceId
       parameters:
-        - name: tableId
+        - name: serviceId
           in: path
-          description: Table Identifier
+          description: Service Identifier
           required: true
           schema:
             type: string
@@ -731,7 +731,7 @@ paths:
       description: Delete all upgrades for the given table
       operationId: deleteAllUpgradesByTableId
       parameters:
-        - name: tableId
+        - name: serviceId
           in: path
           description: Table Identifier
           required: true
@@ -1029,6 +1029,8 @@ components:
           $ref: '#/components/schemas/RestTable'
         booking:
           $ref: '#/components/schemas/Booking'
+        upgrades:
+          $ref: '#/components/schemas/Upgrades'
       xml:
         name: Service
     RestTable:
@@ -1049,8 +1051,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/RestService'
-        upgrades:
-          $ref: '#/components/schemas/Upgrades'
       xml:
         name: Tag
     Upgrades:
@@ -1075,8 +1075,8 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Waiter'
-        table:
-            $ref: '#/components/schemas/RestTable'
+        service:
+            $ref: '#/components/schemas/RestService'
       xml:
         name: Upgrades
     Restaurant:

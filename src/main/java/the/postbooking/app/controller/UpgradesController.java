@@ -29,24 +29,24 @@ public class UpgradesController implements UpgradesApi {
         this.assembler = assembler;
     }
 
-    @Override
-    public ResponseEntity<List<Upgrades>> addOrReplaceUpgradesByTableId(String tableId, @Valid Upgrades upgrades) {
-        return ok(service.addOrReplaceUpgradesByTableId(tableId, upgrades));
+    @Override //This should be addOrReplaceUpgradesByServiceId to modify API
+    public ResponseEntity<List<Upgrades>> addOrReplaceUpgradesByServiceId(String serviceId, @Valid Upgrades upgrades) {
+        return ok(service.addOrReplaceUpgradesByServiceId(serviceId, upgrades));
     }
 
     @Override
-    public ResponseEntity<List<Upgrades>> addUpgradesByTableId(String tableId, @Valid Upgrades upgrades) {
-        return ok(service.addUpgradesByTableId(tableId, upgrades));
+    public ResponseEntity<List<Upgrades>> addUpgradesByServiceId(String serviceId, @Valid Upgrades upgrades) {
+        return ok(service.addUpgradesByTableId(serviceId, upgrades));
     }
 
     @Override
-    public ResponseEntity<Upgrades> getUpgradesByTableId(String tableId) {
-        return ok(assembler.toModel(service.getUpgradesByTableId(tableId)));
+    public ResponseEntity<Upgrades> getUpgradesByServiceId(String serviceId) {
+        return ok(assembler.toModel(service.getUpgradesByServiceId(serviceId)));
     }
 
     @Override
     public ResponseEntity<Void> deleteAllUpgradesByTableId(String tableId) {
-        service.deleteAllUpgradesByTableId(tableId);
+        service.deleteAllUpgradesByServiceId(tableId);
         return accepted().build();
     }
 }

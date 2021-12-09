@@ -32,8 +32,11 @@ public class ServiceEntity {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "REST_TABLE_ID", referencedColumnName = "ID", nullable = false)
     private TableEntity rest_table;
- 
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "WAITER_ID", referencedColumnName = "ID")
     private WaiterEntity waiter;
+
+    @OneToOne(mappedBy = "service", fetch = FetchType.LAZY, orphanRemoval = true)
+    private UpgradesEntity upgrades;
 }

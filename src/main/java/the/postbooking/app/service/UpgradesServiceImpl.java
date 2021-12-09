@@ -4,7 +4,7 @@ import org.springframework.stereotype.Service;
 import postbookingapp.api.Upgrades;
 import the.postbooking.app.entity.UpgradesEntity;
 import the.postbooking.app.exception.ResourceNotFoundException;
-import the.postbooking.app.repository.TableRepository;
+import the.postbooking.app.repository.ServiceRepository;
 import the.postbooking.app.repository.UpgradesRepository;
 
 import javax.validation.Valid;
@@ -21,16 +21,16 @@ import java.util.UUID;
 public class UpgradesServiceImpl implements UpgradesService {
 
     private UpgradesRepository repository;
-    private TableRepository tableRep;
+    private ServiceRepository serviceRep;
 
-    private UpgradesServiceImpl(UpgradesRepository repository, TableRepository tableRep) {
+    private UpgradesServiceImpl(UpgradesRepository repository, ServiceRepository serviceRep) {
         this.repository = repository;
-        this.tableRep = tableRep;
+        this.serviceRep = serviceRep;
     }
 
     @Override
     public List<Upgrades> addUpgradesByTableId(String tableId, @Valid Upgrades upgrades) {
-        if (Objects.isNull(upgrades.getTable())) {
+        if (Objects.isNull(upgrades.getService())) {
             throw new ResourceNotFoundException("Invalid table id.");
         }
         repository.save(toEntity(upgrades));
@@ -38,13 +38,13 @@ public class UpgradesServiceImpl implements UpgradesService {
     }
 
     @Override
-    public List<Upgrades> addOrReplaceUpgradesByTableId(String tableId, @Valid Upgrades upgrades) {
-        UpgradesEntity ori = getUpgradesByTableId(tableId);
+    public List<Upgrades> addOrReplaceUpgradesByServiceId(String serviceId, @Valid Upgrades upgrades) {
+        UpgradesEntity ori = getUpgradesByServiceId(serviceId);
         UpgradesEntity mod = toEntity(upgrades);
         ori.setDietary(mod.getDietary());
         ori.setDrink(mod.getDrink());
         ori.setQuantity(mod.getQuantity());
-        ori.setRest_table(mod.getRest_table());
+        ori.setService(mod.getService());
         ori.setUnitPrice(mod.getUnitPrice());
         ori.setSpecial_food(mod.getSpecial_food());
         repository.save(ori);
@@ -52,13 +52,13 @@ public class UpgradesServiceImpl implements UpgradesService {
     }
 
     @Override
-    public void deleteAllUpgradesByTableId(String tableId) {
-        repository.delete(getUpgradesByTableId(tableId));
+    public void deleteAllUpgradesByServiceId(String serviceId) {
+        repository.delete(getUpgradesByServiceId(serviceId));
     }
 
     @Override
-    public UpgradesEntity getUpgradesByTableId(String tableId) {
-        return repository.findByTableId(UUID.fromString(tableId));
+    public UpgradesEntity getUpgradesByServiceId(String serviceId) {
+        return repository.findByServiceId(UUID.fromString(serviceId));
     }
 
     @Override
@@ -67,7 +67,7 @@ public class UpgradesServiceImpl implements UpgradesService {
         entity.setDietary(upgrades.getDietary());
         entity.setDrink(upgrades.getDrink());
         entity.setQuantity(upgrades.getQuantity());
-        entity.setRest_table(tableRep.getOne(UUID.fromString(upgrades.getTable().getId())));
+        entity.setService(serviceRep.getOne(UUID.fromString(upgrades.getService().getId())));
         entity.setUnitPrice(upgrades.getUnitPrice().doubleValue());
         entity.setSpecial_food(upgrades.getSpecialFood());
         return entity;

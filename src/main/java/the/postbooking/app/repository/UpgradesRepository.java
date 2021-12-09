@@ -13,6 +13,6 @@ import java.util.UUID;
  **/
 @Repository
 public interface UpgradesRepository extends JpaRepository<UpgradesEntity, UUID> {
-    @Query(value = "select * from erest.upgrades inner join erest.table on erest.table.ID = :fromString", nativeQuery = true)
-    UpgradesEntity findByTableId(UUID fromString);
+    @Query(value = "select * from erest.upgrades inner join erest.service on erest.table.ID = :fromString", nativeQuery = true)
+    UpgradesEntity findByServiceId(UUID fromString);
 }

@@ -20,6 +20,7 @@ create TABLE IF NOT EXISTS erest.booking (
     seats_num numeric(30, 1),
     customer_id uuid NOT NULL,
     restaurant_id uuid NOT NULL,
+    service_id uuid,
     PRIMARY KEY(id)
 );
 
@@ -30,7 +31,6 @@ create TABLE IF NOT EXISTS erest.rest_table (
     table_seats numeric(10, 1),
     restaurant_id uuid NOT NULL,
     service_id uuid,
-    upgrades_id uuid,
     PRIMARY KEY(id)
 );
 
@@ -44,7 +44,7 @@ create TABLE IF NOT EXISTS erest.upgrades (
     special_food varchar(16),
     dietary varchar(16),
     waiter_id uuid,
-    rest_table_id uuid NOT NULL,
+    service_id uuid NOT NULL,
     PRIMARY KEY(id)
 );
 
@@ -78,13 +78,13 @@ create TABLE IF NOT EXISTS erest.restaurant (
     email varchar(24),
     phone varchar(24),
     picture varchar(1000),
-    customer_id uuid,
+    booking_id uuid,
     table_id uuid,
     waiter_id uuid,
     menu_id uuid,
     PRIMARY KEY(id),
-    FOREIGN KEY(customer_id)
-        REFERENCES erest.user(id),
+    FOREIGN KEY(booking_id)
+        REFERENCES erest.booking(id),
     FOREIGN KEY(table_id)
         REFERENCES erest.rest_table(id),
     FOREIGN KEY(waiter_id)
@@ -101,13 +101,16 @@ create TABLE IF NOT EXISTS erest.service (
     waiter_id uuid,
     rest_table_id uuid NOT NULL,
     booking_id uuid NOT NULL,
+    upgrades_id uuid,
     PRIMARY KEY(id),
     FOREIGN KEY(booking_id)
         REFERENCES erest.booking(id),
     FOREIGN KEY(rest_table_id)
         REFERENCES erest.rest_table(id),
     FOREIGN KEY(waiter_id)
-        REFERENCES erest.waiter(id)
+        REFERENCES erest.waiter(id),
+    FOREIGN KEY(upgrades_id)
+        REFERENCES erest.upgrades(id)
 );
 
 create TABLE IF NOT EXISTS erest.user_token (
@@ -127,6 +130,10 @@ alter TABLE erest.booking
     add FOREIGN KEY(customer_id)
     REFERENCES erest.user(id);
 
+alter TABLE erest.booking
+    add FOREIGN KEY(service_id)
+    REFERENCES erest.service(id);
+
 alter TABLE erest.rest_table
     add FOREIGN KEY(restaurant_id)
     REFERENCES erest.restaurant(id);
@@ -135,17 +142,13 @@ alter TABLE erest.rest_table
     add FOREIGN KEY(service_id)
     REFERENCES erest.service(id);
 
-alter TABLE erest.rest_table
-    add FOREIGN KEY(upgrades_id)
-    REFERENCES erest.upgrades(id);
-
 alter TABLE erest.upgrades
     add FOREIGN KEY(waiter_id)
     REFERENCES erest.waiter(id);
 
 alter TABLE erest.upgrades
-    add FOREIGN KEY(rest_table_id)
-    REFERENCES erest.rest_table(id);
+    add FOREIGN KEY(service_id)
+    REFERENCES erest.service(id);
 
 alter TABLE erest.waiter
     add FOREIGN KEY(rest_id)

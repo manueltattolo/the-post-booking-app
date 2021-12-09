@@ -49,7 +49,6 @@ public class TableRepresentationModelAssembler
         resource.setRestaurant(rAssembler.toModel(entity.getRestaurant()));
         resource.setName(entity.getName());
         resource.setTableSeats(entity.getTable_seats());
-        resource.setUpgrades(uAssembler.toModel(entity.getUpgrades()));
         resource.add(linkTo(methodOn(TableController.class).getTablesByRestaurantId(rid)).withRel("tables"));
         return resource;
     }
